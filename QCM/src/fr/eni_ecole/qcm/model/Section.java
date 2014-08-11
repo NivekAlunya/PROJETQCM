@@ -1,6 +1,8 @@
 package fr.eni_ecole.qcm.model;
 
-public class Section 
+import java.io.Serializable;
+
+public class Section implements Serializable
 {
 	private int numero;
 	private int nombreQuestion;
@@ -36,15 +38,16 @@ public class Section
 	
 	public Section()
 	{
-		super();
+		this(0,0,null,null);
 	}
 	
-	public Section(int _numero,int _nombreQuestion,Test _idtest,Theme _idTheme)
+	public Section(int numero,int nombreQuestion,Test idtest,Theme idTheme)
 	{
-		this.numero=_numero;
-		this.nombreQuestion=_nombreQuestion;
-		this.idTest=_idtest;
-		this.idTheme=_idTheme;
+		super();
+		this.numero=numero;
+		this.nombreQuestion=nombreQuestion;
+		this.idTest=idtest;
+		this.idTheme=idTheme;
 	}
 	
 	

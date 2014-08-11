@@ -1,8 +1,9 @@
 package fr.eni_ecole.qcm.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Test 
+public class Test implements Serializable
 {
 	private int idTest;
 	private Date duree;
@@ -52,17 +53,18 @@ public class Test
 	
 	public Test()
 	{
-		super();
+		this(0,null,"",0,0,0);
 	}
 	
 	
-	public Test(int _idTest, Date _duree, String _nom, int _seuilAcquis, int _seuilEnCours, int _nbSection )
+	public Test(int idTest, Date duree, String nom, int seuilAcquis, int seuilEnCours, int nbSection )
 	{
-		this.idTest=_idTest;
-		this.duree=_duree;
-		this.nom=_nom;
-		this.seuilAcquis=_seuilAcquis;
-		this.seuilEnCours=_seuilEnCours;
-		this.nbSection=_nbSection;
+		super();
+		this.idTest=idTest;
+		this.duree=duree;
+		this.nom=nom;
+		this.seuilAcquis=seuilAcquis;
+		this.seuilEnCours=seuilEnCours;
+		this.nbSection=nbSection;
 	}	
 }

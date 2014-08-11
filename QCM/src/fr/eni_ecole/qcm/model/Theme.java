@@ -1,6 +1,8 @@
 package fr.eni_ecole.qcm.model;
 
-public class Theme 
+import java.io.Serializable;
+
+public class Theme implements Serializable
 {
 	private int idTheme;
 	private String nom;
@@ -22,13 +24,14 @@ public class Theme
 	
 	public Theme()
 	{
-		super();
+		this(0,"");
 	}
 	
-	public Theme(int _idTheme,String _nom)
+	public Theme(int idTheme,String nom)
 	{
-		this.idTheme=_idTheme;
-		this.nom=_nom;
+		super();
+		this.idTheme=idTheme;
+		this.nom=nom;
 	}
 	
 	
