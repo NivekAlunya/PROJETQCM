@@ -1,6 +1,0 @@
-INDEX VERSION 1.122+D:\PROJETQCM\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3519393570.index
-2740491353.index
-2487079461.index
-2453613199.index
-517474922.index
