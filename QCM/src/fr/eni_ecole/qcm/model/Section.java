@@ -50,7 +50,5 @@ public class Section implements Serializable
 		this.test=test;
 		this.theme=theme;
 	}
-	
-	
-	
+
 }
