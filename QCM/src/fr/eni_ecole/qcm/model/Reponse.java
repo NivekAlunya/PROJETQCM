@@ -4,24 +4,24 @@ import java.io.Serializable;
 
 public class Reponse implements Serializable{
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private int idReponse;
 	private String proposition;
 	private char correcte;
-	private int idQuestion;
+	private Question idQuestion;
+	
 	
 	/**
-	 * Constructors
+	 * 
 	 * @param idReponse
 	 * @param proposition
 	 * @param correcte
 	 * @param idQuestion
 	 */
+	
 	public Reponse(int idReponse, String proposition, char correcte,
-			int idQuestion) {
+			Question idQuestion) {
 		super();
 		this.idReponse = idReponse;
 		this.proposition = proposition;
@@ -29,7 +29,10 @@ public class Reponse implements Serializable{
 		this.idQuestion = idQuestion;
 	}
 	
-	
+	/**
+	 * 
+	 * @return
+	 */
 	public int getIdReponse() {
 		return idReponse;
 	}
@@ -48,12 +51,14 @@ public class Reponse implements Serializable{
 	public void setCorrecte(char correcte) {
 		this.correcte = correcte;
 	}
-	public int getIdQuestion() {
+	public Question getIdQuestion() {
 		return idQuestion;
 	}
-	public void setIdQuestion(int idQuestion) {
+	public void setIdQuestion(Question idQuestion) {
 		this.idQuestion = idQuestion;
 	}
+	
+	
 	
 	
 	
