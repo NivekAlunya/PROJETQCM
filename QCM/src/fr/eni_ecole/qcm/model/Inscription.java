@@ -24,6 +24,15 @@ public class Inscription implements Serializable{
 	
 	
 
+	@Override
+	public String toString() {
+		return "Inscription [idInscription=" + idInscription + ", candidat="
+				+ candidat.toString() + ", test=" + test.toString() + ", typeInscription="
+				+ typeInscription + ", rapport=" + rapport + ", dateDebut="
+				+ dateDebut + ", dateFin=" + dateFin + ", eMail=" + eMail
+				+ ", tempsEcoule=" + tempsEcoule + "]";
+	}
+
 	public Inscription(Integer idInscription, Candidat candidat,
 			Test test, String typeInscription, String rapport,
 			Date dateDebut, Date dateFin, String eMail, Integer tempsEcoule) {
