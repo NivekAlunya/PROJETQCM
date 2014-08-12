@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <Resource 
+        auth="Container" 
+        defaultAutoCommit="true"
+        driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        initialSize="1"
+        maxActive="100"
+        maxIdle="30" 
+        maxWait="10000" 
+        name="sqlserver-PROJETQCM" 
+        password="Pa$$w0rd"
+        removeAbandoned="true" 
+        removeAbandonedTimeout="60" 
+        type="javax.sql.DataSource"
+        url="jdbc:sqlserver://server-bdd:1433;databasename=PROJETQCM" 
+        username="sa"
+        validationQuery="select 1 from pool_listen" 
+        />
+
+</Context>
