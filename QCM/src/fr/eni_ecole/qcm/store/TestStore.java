@@ -81,21 +81,15 @@ public class TestStore {
 	
 	public static void ajouter(Test test) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
+		//PreparedStatement rqt=null;
+		CallableStatement cstmt=null;
 
 		try{
 			
-			/*
-			 * (@duree datetime,
-	            @nom varchar(50),
-	            @seuilAquis int,
-	            @seuilEnCours int,
-	            @nbSection int,
-	            @id int output)
-			 */
+			
 
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.InsertTests(?,?,?,?,?,?)}");
+			cstmt = cnx.prepareCall("{call dbo.InsertTests(?,?,?,?,?,?)}");
 			cstmt.setDate(1, test.getDuree());
 			cstmt.setString(2,test.getNom());
 			cstmt.setInt(3,test.getSeuilAcquis());
@@ -113,24 +107,21 @@ public class TestStore {
 				
 		finally
 		{
-			if (rqt!=null) rqt.close();
+			if (cstmt!=null)
+				cstmt.close();
 			if (cnx!=null) cnx.close();
 		}
 	}
 		
-	
-	
-	
-	
-	
-	
-	
+		
 	public static void modifier(Test test) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
+		//PreparedStatement rqt=null;
+		CallableStatement cstmt =null;
+		
 		try{
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.UpdateTests(?,?,?,?,?,?)}");
+			cstmt = cnx.prepareCall("{call dbo.UpdateTests(?,?,?,?,?,?)}");
 			cstmt.setInt(1,test.getIdTest());	
 			cstmt.setDate(2,test.getDuree());
 			cstmt.setString(3, test.getNom());
@@ -148,18 +139,20 @@ public class TestStore {
 		
 		finally
 		{
-			if (rqt!=null) rqt.close();
-			if (cnx!=null) cnx.close();
+			if (cstmt!=null)	cstmt.close();
+			if (cnx!=null)		cnx.close();
 		}
 	}
 	
 	public static void supprimer(Test test) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
+		//PreparedStatement rqt=null;
+		
+		CallableStatement cstmt =null;
 		try{
 
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.DeleteTests(?)}");
+			cstmt = cnx.prepareCall("{call dbo.DeleteTests(?)}");
 			cstmt.setInt(1,test.getIdTest());	
 			cstmt.execute();
 		   }
@@ -171,8 +164,8 @@ public class TestStore {
 		
 		finally
 		{
-			if (rqt!=null) rqt.close();
-			if (cnx!=null) cnx.close();
+			if (cstmt!=null)	cstmt.close();
+			if (cnx!=null)		cnx.close();
 		}
 	}
 }
