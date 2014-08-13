@@ -10,6 +10,7 @@ public class Administrateur implements Serializable
 	private String nom;
 	private String prenom;
 	private String motDePasse;
+	private String typeAdmin;
 	private String email;
 	
 	// Constructeurs
@@ -50,6 +51,10 @@ public class Administrateur implements Serializable
 	{
 		return motDePasse;
 	}
+	
+	public String getTypeAdmin() {
+		return typeAdmin;
+	}
 			
 	public String getEmail()
 	{
@@ -80,6 +85,10 @@ public class Administrateur implements Serializable
 	public void setEmail(String email)
 	{
 		this.email = email;
+	}	
+	
+	public void setTypeAdmin(String typeAdmin) {
+		this.typeAdmin = typeAdmin;
 	}
 
 }
