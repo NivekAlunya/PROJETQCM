@@ -11,8 +11,15 @@ public class ReponseQCM implements Serializable{
 	private Reponse reponse;
 	private GenerationQCM generationQCM;
 
-	public char getCochee() {
-		return cochee;
+	public ReponseQCM (){
+		this('-',null,null);
+	}
+
+	public ReponseQCM(char cochee, Reponse reponse, GenerationQCM generationQCM) {
+		super();
+		this.cochee = cochee;
+		this.reponse = reponse;
+		this.generationQCM = generationQCM;
 	}
 
 	public void setCochee(char cochee) {
@@ -27,6 +34,7 @@ public class ReponseQCM implements Serializable{
 		this.reponse = reponse;
 	}
 
+
 	public GenerationQCM getGenerationQCM() {
 		return generationQCM;
 	}
@@ -35,15 +43,7 @@ public class ReponseQCM implements Serializable{
 		this.generationQCM = generationQCM;
 	}
 
-	public ReponseQCM (){
-		this('-',null,null);
+	public char getCochee() {
+		return cochee;
 	}
-
-	public ReponseQCM(char cochee, Reponse reponse, GenerationQCM generationQCM) {
-		super();
-		this.cochee = cochee;
-		this.reponse = reponse;
-		this.generationQCM = generationQCM;
-	}
-
 }
