@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import fr.eni_ecole.qcm.model.Theme;
 
 public class ThemeStore 
@@ -14,22 +13,21 @@ public class ThemeStore
 
 	public static void ajouter(Theme theme) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
-
+		CallableStatement cstmt=null;
+		
 		try{
 
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.insertThemes(?, ?)}");
+			cstmt = cnx.prepareCall("{call dbo.insertThemes(?, ?)}");
 			cstmt.setString(2, theme.getNom());
 			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
 			cstmt.execute();
 			theme.setIdTheme(cstmt.getInt(1));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {			
 			e.printStackTrace();
 		}
 		finally{
-			if (rqt!=null) rqt.close();
+			if (cstmt!=null) cstmt.close();
 			if (cnx!=null) cnx.close();
 		}
 	}
@@ -37,10 +35,10 @@ public class ThemeStore
 	
 	public static void modifier(Theme theme) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
+		CallableStatement cstmt=null;
 		try{
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.updateThemes(?, ?)}");
+			cstmt = cnx.prepareCall("{call dbo.updateThemes(?, ?)}");
 			cstmt.setInt(1,theme.getIdTheme());	
 			cstmt.setString(2, theme.getNom());
 			cstmt.execute();
@@ -50,7 +48,7 @@ public class ThemeStore
 			e.printStackTrace();
 		}
 		finally{
-			if (rqt!=null) rqt.close();
+			if (cstmt!=null) cstmt.close();
 			if (cnx!=null) cnx.close();
 		}
 	}
@@ -58,11 +56,11 @@ public class ThemeStore
 	
 	public static void supprimer(Theme theme) throws Exception{
 		Connection cnx=null;
-		PreparedStatement rqt=null;
+		CallableStatement cstmt=null;
 		try{
 
 			cnx=PoolConnexion.getConnection();				
-			CallableStatement cstmt = cnx.prepareCall("{call dbo.deleteThemes(?)}");
+			cstmt = cnx.prepareCall("{call dbo.deleteThemes(?)}");
 			cstmt.setInt(1,theme.getIdTheme());				
 			cstmt.execute();
 		}catch (Exception e) {
@@ -70,7 +68,7 @@ public class ThemeStore
 			e.printStackTrace();
 		}
 		finally{
-			if (rqt!=null) rqt.close();
+			if (cstmt!=null) cstmt.close();
 			if (cnx!=null) cnx.close();
 		}				
 	}
@@ -109,17 +107,20 @@ public class ThemeStore
 	}
 	
 	
-	public static Theme rechercherTheme(Theme theme) throws Exception{
+	public static Theme rechercherTheme(int idTheme) throws Exception{
 		Connection cnx=null;
 		PreparedStatement rqt=null;
 		ResultSet rs=null;
 		try{
 			cnx=PoolConnexion.getConnection();
 			rqt=cnx.prepareStatement("select * from Themes where id = ?");
-			rqt.setInt(1, theme.getIdTheme());
+			rqt.setInt(1, idTheme);
 			rs=rqt.executeQuery();
-			while (rs.next()){
-				theme.setNom(rs.getString("nom"));								
+			if (rs.next()){
+				
+				return new Theme(rs.getInt("idTheme"),rs.getString("nom"));								
+			} else {
+				return null;
 			}
 		}catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -130,7 +131,7 @@ public class ThemeStore
 			if (rqt!=null) rqt.close();
 			if (cnx!=null) cnx.close();
 		}
-		
-		return theme;
+
+		return null;
 	}	
 }
