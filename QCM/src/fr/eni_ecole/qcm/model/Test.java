@@ -6,7 +6,7 @@ import java.sql.Date;
 public class Test implements Serializable
 {
 	private int idTest;
-	private Date duree;
+	private int duree;
 	private String nom;
 	private int seuilAcquis;
 	private int seuilEnCours;
@@ -19,10 +19,10 @@ public class Test implements Serializable
 	public void setIdTest(int idTest) {
 		this.idTest = idTest;
 	}
-	public Date getDuree() {
+	public int getDuree() {
 		return duree;
 	}
-	public void setDuree(Date duree) {
+	public void setDuree(int duree) {
 		this.duree = duree;
 	}
 	public String getNom() {
@@ -53,11 +53,11 @@ public class Test implements Serializable
 	
 	public Test()
 	{
-		this(0,null,"",0,0,0);
+		this(0,0,"",0,0,0);
 	}
 	
 	
-	public Test(int idTest, Date duree, String nom, int seuilAcquis, int seuilEnCours, int nbSection )
+	public Test(int idTest, int duree, String nom, int seuilAcquis, int seuilEnCours, int nbSection )
 	{
 		super();
 		this.idTest=idTest;

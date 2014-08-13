@@ -33,7 +33,7 @@ public class TestStore {
 		{
 			Test test = new Test();
 			test.setIdTest(rs.getInt("idTest"));
-			test.setDuree(rs.getDate("duree"));
+			test.setDuree(rs.getInt("duree"));
 			test.setNom(rs.getString("nom"));
 			test.setSeuilAcquis(rs.getInt("seuilAcquis"));
 			test.setSeuilEnCours(rs.getInt("seuilEnCours"));
@@ -46,7 +46,7 @@ public class TestStore {
 	
 	// Rechercher un test
 	
-	public static Test rechercherTest(Test test) throws Exception{
+	public static Test rechercherTest(Integer idTest ) throws Exception{
 		Connection cnx=null;
 		PreparedStatement rqt=null;
 		ResultSet rs=null;
@@ -54,14 +54,16 @@ public class TestStore {
 //			
 			cnx = PoolConnexion.getConnection();
 		    rqt=cnx.prepareStatement("select * from tests where idTest = ?");
-			rqt.setInt(1, test.getIdTest());
+			rqt.setInt(1, idTest);
 			rs=rqt.executeQuery();
-			while (rs.next()){
-				test.setIdTest(rs.getInt("idTest"));
-				test.setDuree(rs.getDate("duree"));
-				test.setNom(rs.getString("nom"));
-				test.setSeuilAcquis(rs.getInt("seuilAcquis"));
-				test.setSeuilEnCours(rs.getInt("seuilEnCours"));
+			if (rs.next())
+			{
+				return new Test (rs.getInt("idTest"),rs.getInt("duree"),
+				rs.getString("nom"),rs.getInt("seuilAcquis"),rs.getInt("seuilEnCours"),rs.getInt("nbSection"));
+			}
+			else
+			{
+			return null;
 			}
 		}
 	    catch (Exception e)
@@ -71,26 +73,25 @@ public class TestStore {
 	    }
 	    finally
 	    {
+	    	
 		    if (rs!=null) rs.close();
 		    if (rqt!=null) rqt.close();
 		    if (cnx!=null) cnx.close();
 	    }
 		
-		return test;
+		return null;
 	}
 	
 	public static void ajouter(Test test) throws Exception{
 		Connection cnx=null;
-		//PreparedStatement rqt=null;
 		CallableStatement cstmt=null;
 
 		try{
-			
-			
+				
 
 			cnx=PoolConnexion.getConnection();
 			cstmt = cnx.prepareCall("{call dbo.InsertTests(?,?,?,?,?,?)}");
-			cstmt.setDate(1, test.getDuree());
+			cstmt.setInt(1, test.getDuree());
 			cstmt.setString(2,test.getNom());
 			cstmt.setInt(3,test.getSeuilAcquis());
 			cstmt.setInt(4,test.getSeuilEnCours());
@@ -116,14 +117,13 @@ public class TestStore {
 		
 	public static void modifier(Test test) throws Exception{
 		Connection cnx=null;
-		//PreparedStatement rqt=null;
 		CallableStatement cstmt =null;
 		
 		try{
 			cnx=PoolConnexion.getConnection();
 			cstmt = cnx.prepareCall("{call dbo.UpdateTests(?,?,?,?,?,?)}");
 			cstmt.setInt(1,test.getIdTest());	
-			cstmt.setDate(2,test.getDuree());
+			cstmt.setInt(2,test.getDuree());
 			cstmt.setString(3, test.getNom());
 			cstmt.setInt(4,test.getSeuilAcquis());	
 			cstmt.setInt(5,test.getSeuilEnCours());	
@@ -144,16 +144,16 @@ public class TestStore {
 		}
 	}
 	
-	public static void supprimer(Test test) throws Exception{
+	public static void supprimer(Integer idTest ) throws Exception{
 		Connection cnx=null;
-		//PreparedStatement rqt=null;
+		
 		
 		CallableStatement cstmt =null;
 		try{
 
 			cnx=PoolConnexion.getConnection();
 			cstmt = cnx.prepareCall("{call dbo.DeleteTests(?)}");
-			cstmt.setInt(1,test.getIdTest());	
+			cstmt.setInt(1,idTest);	
 			cstmt.execute();
 		   }
 		catch (Exception e)
