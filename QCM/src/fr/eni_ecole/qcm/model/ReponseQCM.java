@@ -9,15 +9,15 @@ public class ReponseQCM implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private char cochee ;
-	private Reponse idReponse;
-	private GenerationQCM idGenerationQCM;
+	private Reponse reponse;
+	private GenerationQCM generationQCM;
 	
 	
-	public ReponseQCM(char cochee, Reponse idReponse, GenerationQCM idGenerationQCM) {
+	public ReponseQCM(char cochee, Reponse reponse, GenerationQCM generationQCM) {
 		super();
 		this.cochee = cochee;
-		this.idReponse = idReponse;
-		this.idGenerationQCM = idGenerationQCM;
+		this.reponse = reponse;
+		this.generationQCM = generationQCM;
 	}
 
 
@@ -31,23 +31,23 @@ public class ReponseQCM implements Serializable{
 	}
 
 
-	public Reponse getIdReponse() {
-		return idReponse;
+	public Reponse getReponse() {
+		return reponse;
 	}
 
 
-	public void setIdReponse(Reponse idReponse) {
-		this.idReponse = idReponse;
+	public void setReponse(Reponse reponse) {
+		this.reponse = reponse;
 	}
 
 
-	public GenerationQCM getIdGenerationQCM() {
-		return idGenerationQCM;
+	public GenerationQCM getGenerationQCM() {
+		return generationQCM;
 	}
 
 
-	public void setIdGenerationQCM(GenerationQCM idGenerationQCM) {
-		this.idGenerationQCM = idGenerationQCM;
+	public void setGenerationQCM(GenerationQCM generationQCM) {
+		this.generationQCM = generationQCM;
 	}
 	
 	
