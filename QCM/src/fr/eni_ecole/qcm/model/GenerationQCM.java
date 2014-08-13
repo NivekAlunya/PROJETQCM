@@ -6,28 +6,24 @@ public class GenerationQCM implements Serializable{
 	
 	private int idGenerationQCM;
 	private String marque;
-	private int idInscription;
-	private int idTheme;
-	private int idTest;
-	private int idQuestion;
+	private Inscription inscription;
+	private Theme theme;
+	private Test test;
+	private Question question;
 	
-	
-	
-	
-	
-	public GenerationQCM(int idGenerationQCM, String marque, int idInscription,
-			int idTheme, int idTest, int idQuestion) {
+	public GenerationQCM() {
+		this(0,"",null,null,null,null);
+	}
+	public GenerationQCM(int idGenerationQCM, String marque,
+			Inscription inscription, Theme theme, Test test, Question question) {
 		super();
 		this.idGenerationQCM = idGenerationQCM;
 		this.marque = marque;
-		this.idInscription = idInscription;
-		this.idTheme = idTheme;
-		this.idTest = idTest;
-		this.idQuestion = idQuestion;
+		this.inscription = inscription;
+		this.theme = theme;
+		this.test = test;
+		this.question = question;
 	}
-	
-	
-	
 	public int getIdGenerationQCM() {
 		return idGenerationQCM;
 	}
@@ -40,38 +36,29 @@ public class GenerationQCM implements Serializable{
 	public void setMarque(String marque) {
 		this.marque = marque;
 	}
-	public int getIdInscription() {
-		return idInscription;
+	public Inscription getInscription() {
+		return inscription;
 	}
-	public void setIdInscription(int idInscription) {
-		this.idInscription = idInscription;
+	public void setInscription(Inscription inscription) {
+		this.inscription = inscription;
 	}
-	public int getIdTheme() {
-		return idTheme;
+	public Theme getTheme() {
+		return theme;
 	}
-	public void setIdTheme(int idTheme) {
-		this.idTheme = idTheme;
+	public void setTheme(Theme theme) {
+		this.theme = theme;
 	}
-	public int getIdTest() {
-		return idTest;
+	public Test getTest() {
+		return test;
 	}
-	public void setIdTest(int idTest) {
-		this.idTest = idTest;
+	public void setTest(Test test) {
+		this.test = test;
 	}
-	public int getIdQuestion() {
-		return idQuestion;
+	public Question getQuestion() {
+		return question;
 	}
-	public void setIdQuestion(int idQuestion) {
-		this.idQuestion = idQuestion;
+	public void setQuestion(Question question) {
+		this.question = question;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

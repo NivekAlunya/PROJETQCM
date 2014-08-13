@@ -6,11 +6,10 @@ public class Question implements Serializable{
 	/**
 	 * Attributs
 	 */
-	private static final long serialVersionUID = 1L;
 	private int idQuestion;
 	private String enonce;
 	private String urlimage;
-	private int idTheme;
+	private Theme theme;
 	
 	/**
 	 * Constructors
@@ -19,18 +18,27 @@ public class Question implements Serializable{
 	 * @param urlimage
 	 * @param idTheme
 	 */
-	public Question(int idQuestion, String enonce, String urlimage, int idTheme) {
+	public Question(){
+		this( 0 ,"","",null);
+	}
+	
+	public Question(int idQuestion, String enonce, String urlimage, Theme theme) {
 		super();
 		this.idQuestion = idQuestion;
 		this.enonce = enonce;
 		this.urlimage = urlimage;
-		this.idTheme = idTheme;
+		this.theme = theme;
 	}
 	
 	// guetters and setters
-	
 	public int getIdQuestion() {
 		return idQuestion;
+		}
+	public Theme getTheme() {
+		return theme;
+	}
+	public void setTheme(Theme theme) {
+		this.theme = theme;
 	}
 	public void setIdQuestion(int idQuestion) {
 		this.idQuestion = idQuestion;
@@ -47,12 +55,7 @@ public class Question implements Serializable{
 	public void setUrlimage(String urlimage) {
 		this.urlimage = urlimage;
 	}
-	public int getIdTheme() {
-		return idTheme;
-	}
-	public void setIdTheme(int idTheme) {
-		this.idTheme = idTheme;
-	}
+	
 	
 	
 

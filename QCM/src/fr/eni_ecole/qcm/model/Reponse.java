@@ -5,34 +5,30 @@ import java.io.Serializable;
 public class Reponse implements Serializable{
 	
 	
-	private static final long serialVersionUID = 1L;
 	private int idReponse;
 	private String proposition;
 	private char correcte;
-	private Question idQuestion;
+	private Question question;
 	
+	public Reponse (){
+		this(0,"",'-',null);
+	}
 	
-	/**
-	 * 
-	 * @param idReponse
-	 * @param proposition
-	 * @param correcte
-	 * @param idQuestion
-	 */
-	
-	public Reponse(int idReponse, String proposition, char correcte,
-			Question idQuestion) {
+	public Reponse(int idReponse, String proposition, char correcte,Question question) {
+		
 		super();
 		this.idReponse = idReponse;
 		this.proposition = proposition;
 		this.correcte = correcte;
-		this.idQuestion = idQuestion;
+		this.question = question;
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
+	public Question getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 	public int getIdReponse() {
 		return idReponse;
 	}
@@ -50,17 +46,6 @@ public class Reponse implements Serializable{
 	}
 	public void setCorrecte(char correcte) {
 		this.correcte = correcte;
-	}
-	public Question getIdQuestion() {
-		return idQuestion;
-	}
-	public void setIdQuestion(Question idQuestion) {
-		this.idQuestion = idQuestion;
-	}
-	
-	
-	
-	
-	
+	}	
 
 }
