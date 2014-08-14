@@ -116,7 +116,7 @@ public class InscriptionStore {
 		Inscription inscription = null;
 		try {
 			cnx=PoolConnexion.getConnection();
-			rqt=cnx.prepareStatement("select i.idInscription, c.idCandidat, c.Nom, c.Prenom, " +
+			rqt=cnx.prepareStatement("select i.idInscription, c.idCandidat, c.Nom, c.Prenom, c.login " +
 					" c.MotDePasse, c.codePromotion, t.idTest, t.duree, t.Nom as NomTest, t.SeuilAcquis, t.SeuilEnCours, " +
 					" t.NbSection, i.typeInscription, i.Rapport, i.dateDebut, i.dateFin, i.eMail, i.tempsEcoule, " +
 					" p.codePromotion, p.Libelle " +
@@ -131,8 +131,13 @@ public class InscriptionStore {
 			Candidat candidat = null;
 			Test test = null;
 			if (rs.next()){
-				promotion = new Promotion(rs.getString("codePromotion"), rs.getString("Libelle"));
-				candidat = new Candidat(rs.getInt("idCandidat"), rs.getString("Nom"), rs.getString("Prenom"), rs.getString("MotDePasse"), promotion);
+				rs.getString("codePromotion");
+				if (!rs.wasNull() && !rs.getString("codePromotion").isEmpty()) {
+					promotion = new Promotion(rs.getString("codePromotion"), rs.getString("Libelle"));
+				} else {
+					promotion = null;
+				}
+				candidat = new Candidat(rs.getInt("idCandidat"), rs.getString("Nom"), rs.getString("Prenom"), rs.getString("login"), rs.getString("MotDePasse"), promotion);
 				test = new Test(rs.getInt("idTest"), rs.getInt("duree"), rs.getString("NomTest"), 
 						rs.getInt("seuilAcquis"), rs.getInt("seuilEnCours"), rs.getInt("nbSection"));
 				
