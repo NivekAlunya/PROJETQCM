@@ -1,0 +1,36 @@
+* {
+    color:rgb(255,255,255);
+    padding:0;
+    margin:0;
+    font-family: "calibri";
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+
+#page {
+    width: 1265px;
+    height:1000px;
+    <!--margin-left: 20px;
+    <!--margin-right: auto;
+    background-color: rgb(66, 57, 75);
+}
+
+
+h1 {
+	border-bottom: dotted ;	
+	bottom : <20px>;
+	border-top: dotted;
+	border-left: dotted;
+	border-right: dotted;
+	border-width:thin;
+	color:rgb(255,255,255);
+	
+	
+	background-color: rgb(50, 131, 150);	
+    font-size: 50px;
+    font-family: "calibri";
+    text-align : center  
+}
+
