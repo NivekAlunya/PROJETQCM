@@ -93,14 +93,9 @@ public class Inscription implements Serializable{
 	}
 
 
-
-
 	public void setRapport(String rapport) {
 		this.rapport = rapport;
 	}
-
-
-
 
 	public Date getDateDebut() {
 		return dateDebut;

@@ -72,11 +72,11 @@ public class Candidat implements Serializable{
 		this.motDePasse = motDePasse;
 	}
 
-	public Promotion getpromo() {
+	public Promotion getPromo() {
 		return promo;
 	}
 
-	public void setpromo(Promotion promo) {
+	public void setPromo(Promotion promo) {
 		this.promo = promo;
 	}
 	
