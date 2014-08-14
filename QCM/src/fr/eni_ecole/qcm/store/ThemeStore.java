@@ -89,9 +89,9 @@ public class ThemeStore
 			Theme theme = null;
 			while (rs.next()){
 				theme = new Theme(
-									rs.getInt("IdTheme"),
-									rs.getString("nom")									
-						);
+					rs.getInt("IdTheme"),
+					rs.getString("nom")									
+				);
 				listeTheme.add(theme);				
 			}
 		}catch (Exception e) {
