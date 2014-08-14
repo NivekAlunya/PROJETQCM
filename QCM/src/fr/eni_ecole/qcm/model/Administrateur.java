@@ -10,6 +10,7 @@ public class Administrateur implements Serializable
 	private String nom;
 	private String prenom;
 	private String motDePasse;
+	private String login;
 	private String typeAdmin;
 	private String email;
 	
@@ -17,21 +18,31 @@ public class Administrateur implements Serializable
 	
 	 public Administrateur()
 	{
-		 this(0,null,null,null,null);
+		 this(0,"","","","","","");
 	}
-	public Administrateur(int idAdministrateur, String nom, String prenom,
-				String motDePasse, String email)
-	{
+
+	 public Administrateur(int idAdministrateur, String nom, String prenom,
+			String motDePasse, String login, String typeAdmin, String email) {
 		super();
 		this.idAdministrateur = idAdministrateur;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.motDePasse = motDePasse;
+		this.login = login;
+		this.typeAdmin = typeAdmin;
 		this.email = email;
 	}
 
 	// méthodes Get
 	
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public int getIdAdministrateur()
 	{
 		return idAdministrateur;

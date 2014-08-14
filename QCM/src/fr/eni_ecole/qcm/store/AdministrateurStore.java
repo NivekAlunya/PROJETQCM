@@ -9,11 +9,8 @@ import fr.eni_ecole.qcm.model.Administrateur;
 
 public class AdministrateurStore 
 {
-
-
-public static Administrateur getAdministrateur(Administrateur administrateur) throws Exception
-			 
-			{
+	public static Administrateur getAdministrateur(String login, String motdepasse)
+	{
 		Connection cnx = null;
 		PreparedStatement rqt = null;
 		ResultSet rs = null;
@@ -22,35 +19,32 @@ public static Administrateur getAdministrateur(Administrateur administrateur) th
 			
 			cnx = PoolConnexion.getConnection();
 			
-			rqt = cnx.prepareStatement("select idAdministrateur, nom, prenom,typeAdmin from administrateurs where email=? and motdepasse=?");
-			rqt.setString(1, administrateur.getEmail());
-			rqt.setString(2, administrateur.getMotDePasse());
+			rqt = cnx.prepareStatement("select idAdministrateur, nom, prenom,typeAdmin,email,motdepasse,login from administrateurs where login=? and motdepasse=?");
+			rqt.setString(1, login);
+			rqt.setString(2, motdepasse);
 			rs=rqt.executeQuery();
 			//
 			if (rs.next())
 			{
-				administrateur.setIdAdministrateur(rs.getInt("idAdministrateur"));
-				administrateur.setNom(rs.getString("nom"));
-				administrateur.setPrenom(rs.getString("prenom"));
-			}
-			// ...sinon on renvoie null
-			else {
-				administrateur = null;
+				return new Administrateur(rs.getInt("idAdministrateur"), rs.getString("nom"), rs.getString("prenom"), rs.getString("motDePasse"), rs.getString("login"), rs.getString("typeAdmin"), rs.getString("email"));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-			
 		finally
 		{
-			if (rs!=null) rs.close();
-			if (rqt!=null) rqt.close();
-			if (cnx!=null) cnx.close();
+			try {
+				if (rs!=null) rs.close();
+				if (rqt!=null) rqt.close();
+				if (cnx!=null) cnx.close();
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 		}
-		return administrateur;
+		return null;
 	}
-
 }
 
 

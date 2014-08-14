@@ -14,23 +14,24 @@ public class Candidat implements Serializable{
 	private String nom;
 	private String prenom;
 	private String motDePasse;
+	private String login;
 	private Promotion promo;
 	
 	public Candidat(Integer idCandidat, String nom, String prenom,
-			String motDePasse, Promotion promo) {
+			String motDePasse, String login, Promotion promo) {
 		super();
 		this.idCandidat = idCandidat;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.motDePasse = motDePasse;
+		this.login = login;
 		this.promo = promo;
 	}
-	
+
 	public Candidat() {
-		this(0, "","","",null);
+		this(0, "","","","",null);
 		
 	}
-	
 
 	@Override
 	public String toString() {
@@ -38,7 +39,14 @@ public class Candidat implements Serializable{
 				+ ", prenom=" + prenom + ", Promo=" + promo.getLibelle() + "]";
 	}
 
+	public String getLogin() {
+		return login;
+	}
 
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
 	public Integer getIdCandidat() {
 		return idCandidat;
@@ -79,9 +87,5 @@ public class Candidat implements Serializable{
 	public void setPromo(Promotion promo) {
 		this.promo = promo;
 	}
-	
-	
-	
-	
 
 }

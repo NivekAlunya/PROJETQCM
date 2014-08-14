@@ -131,12 +131,11 @@ public class TestStore {
 			cstmt.execute();
 			
 		   }
-		 catch (Exception e)
-		    {
+		catch (Exception e)
+		{
 			// TODO: handle exception
 			e.printStackTrace();
-		    }
-		
+		}
 		finally
 		{
 			if (cstmt!=null)	cstmt.close();

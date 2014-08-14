@@ -20,16 +20,15 @@ public class CandidatStore {
 		try{
 
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{CALL dbo.insertCandidat(?,?,?,?,?)}");
+			CallableStatement cstmt = cnx.prepareCall("{CALL dbo.insertCandidat(?,?,?,?,?,?)}");
 			cstmt.setString(1, candidat.getNom());
 			cstmt.setString(2, candidat.getPrenom());
-			cstmt.setString(3, candidat.getMotDePasse());
-			cstmt.setString(4, candidat.getPromo().getCodePromotion());
-			cstmt.registerOutParameter(5, java.sql.Types.INTEGER);
+			cstmt.setString(3, candidat.getLogin());
+			cstmt.setString(4, candidat.getMotDePasse());
+			cstmt.setString(5, candidat.getPromo().getCodePromotion());
+			cstmt.registerOutParameter(6, java.sql.Types.INTEGER);
 			cstmt.execute();
-			candidat.setIdCandidat(cstmt.getInt(5));
-			
-			
+			candidat.setIdCandidat(cstmt.getInt(6));
 			
 		} catch (Exception e){
 			e.printStackTrace();
@@ -50,12 +49,13 @@ public class CandidatStore {
 
 		try{
 			cnx=PoolConnexion.getConnection();
-			CallableStatement cstmt = cnx.prepareCall("{CALL dbo.UpdateCandidat(?,?,?,?,?)}");
+			CallableStatement cstmt = cnx.prepareCall("{CALL dbo.UpdateCandidat(?,?,?,?,?,?)}");
 			cstmt.setInt(1, candidat.getIdCandidat());
 			cstmt.setString(2, candidat.getNom());
 			cstmt.setString(3, candidat.getPrenom());
-			cstmt.setString(4, candidat.getMotDePasse());
-			cstmt.setString(5, candidat.getPromo().getCodePromotion());
+			cstmt.setString(4, candidat.getLogin());
+			cstmt.setString(5, candidat.getMotDePasse());
+			cstmt.setString(6, candidat.getPromo().getCodePromotion());
 			cstmt.execute();
 
 		} catch (Exception e){
@@ -103,18 +103,10 @@ public class CandidatStore {
 		try {
 			cnx = PoolConnexion.getConnection();
 			rqt = cnx.createStatement();
-			rs = rqt.executeQuery("SELECT c.idCandidat, c.Nom, c.Prenom, c.MotDePasse as MDP, p.codePromotion,p.Libelle FROM Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion");
+			rs = rqt.executeQuery("SELECT c.idCandidat, c.Nom, c.Prenom, c.login, c.MotDePasse as MDP, p.codePromotion,p.Libelle FROM Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion");
 			Candidat candidat = null;
-			Promotion promotion = null;
 			while (rs.next()){
-				promotion = new Promotion(rs.getString("codePromotion"),rs.getString("Libelle"));
-				candidat = new Candidat(
-						rs.getInt("idCandidat"),
-						rs.getString("Nom"),
-						rs.getString("Prenom"),
-						rs.getString("MDP"),
-						promotion);					
-				listeCandidat.add(candidat);				
+				listeCandidat.add(buildCandidat(rs));				
 			}
 		} catch (Exception e) {
 		}
@@ -128,7 +120,26 @@ public class CandidatStore {
 		}
 		return listeCandidat;
 	}
-	
+
+	private static Candidat buildCandidat(ResultSet rs) throws SQLException {
+		// TODO Auto-generated method stub
+		Promotion promotion = null;
+		rs.getString("codePromotion");
+		if (!rs.wasNull() && !rs.getString("codePromotion").isEmpty()) {
+			promotion = new Promotion(rs.getString("codePromotion"), rs.getString("Libelle"));
+		} else {
+			promotion = null;
+		}
+		return new Candidat(
+				rs.getInt("idCandidat"),
+				rs.getString("Nom"),
+				rs.getString("Prenom"),
+				rs.getString("login"),
+				rs.getString("MDP"),
+				promotion);					
+
+	}
+
 	public static Candidat rechercher(int idCandidat) throws Exception{
 		Connection cnx=null;
 		PreparedStatement rqt=null;
@@ -136,31 +147,21 @@ public class CandidatStore {
 		Candidat candidat = null;
 		try{
 			cnx=PoolConnexion.getConnection();
-			rqt=cnx.prepareStatement("select c.idCandidat, c.Nom, c.Prenom, c.MotDePasse, p.codePromotion, p.Libelle from Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion WHERE idCandidat = ?");
+			rqt=cnx.prepareStatement("select c.idCandidat, c.Nom, c.Prenom, c.login, c.MotDePasse, p.codePromotion, p.Libelle from Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion WHERE idCandidat = ?");
 			rqt.setInt(1, idCandidat);
 			rs=rqt.executeQuery();
-			Promotion promotion = null;
-			
 			if (rs.next()){
-				promotion = new Promotion(rs.getString("codePromotion"), rs.getString("Libelle"));
-				candidat = new Candidat();
-				candidat.setIdCandidat(idCandidat);
-				candidat.setNom(rs.getString("Nom"));
-				candidat.setPrenom(rs.getString("Prenom"));
-				candidat.setMotDePasse(rs.getString("MotDePasse"));
-				candidat.setPromo(promotion);
+				candidat = buildCandidat(rs);
 			}
-			
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			if (rs!=null) rs.close();
 			if (rqt!=null) rqt.close();
 			if (cnx!=null) cnx.close();
 		}
 		
 		return candidat;
-	}	
-	
+	}
 }
