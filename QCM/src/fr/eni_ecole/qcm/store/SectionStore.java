@@ -44,10 +44,9 @@ public class SectionStore
 		CallableStatement cstmt=null; 
 		try{
 			cnx=PoolConnexion.getConnection();
-			cstmt = cnx.prepareCall("{call dbo.DeleteSections(?,?,?)}");
-			cstmt.setInt(1,sect.getNumero());
-			cstmt.setInt(2,sect.getTest().getIdTest());
-			cstmt.setInt(3,sect.getTheme().getIdTheme());
+			cstmt = cnx.prepareCall("{call dbo.DeleteSections(?,?)}");
+			cstmt.setInt(1,sect.getTest().getIdTest());
+			cstmt.setInt(2,sect.getTheme().getIdTheme());
 			cstmt.execute();
 		   }
 		catch (Exception e)
