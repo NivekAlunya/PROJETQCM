@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>QCM ENI - Inscription</title>
+<link rel="stylesheet" type="text/css" href="../theme/Theme1.css" />
+</head>
+
+<body style="width:100%;">
+	<div id="page" style="margin:0 100px">
+	    <!-- include info administrateur -->
+	    <nav>
+	        <a href="Accueil">Accueil</a> <b> | Inscrire à un test </b>
+	    </nav>
+	    <form action="" method="post" enctype="application/x-www-form-urlencoded">
+		    <fieldset>
+		       <label for="listeTest">Test :</label>
+		       <select id="listeTest" name="listeTest">
+	            <option disabled="disabled">Choisir un test</option>
+	            <option value="1">test 1</option>
+	            <option value="2">test 2</option>
+	           </select>
+		    </fieldset>
+		    <fieldset>
+		        <label for="dateDebut">Activée le : </label>
+	            <input type="datetime" name="dateDebut" id="dateDebut" /> 
+                <label for="dateFin">jusqu'au: </label>
+                <input type="datetime" name="dateFin" id="dateFin" /> 
+		    </fieldset>
+		    <fieldset>
+		      <label for="listePromotion">Non inscrit </label>
+		      <select id="listePromotion" multiple="multiple">
+		      <option value="1">promotion1</option>
+		      </select>
+		      <label for="listeCandidat">Stagiaires </label>
+              <select id="listeCandidat" multiple="multiple">
+              <option value="1">candidat1</option>
+              </select>
+		    </fieldset>
+		    <fieldset>
+		    <a href="#ajouter-promotion"></a>
+		    <a href="#retirer-promotion"></a>
+		    <a href="#ajouter-candidat"></a>
+            <a href="#retirer-candidat"></a>
+		    </fieldset>
+	    </form>
+	</div>
+</body>
+</html>

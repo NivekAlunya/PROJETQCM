@@ -1,15 +1,23 @@
 * {
-    color:rgb(255,255,255);
+    color:#fff;
     padding:0;
     margin:0;
     font-family: "calibri";
     font-size: 12px;
     font-weight: normal;
     text-decoration: none;
+    border:0
 }
 body {
 	    min-height:1000px;
 }
+
+input,select, option,button,textarea {
+	color:#000;
+	border:1px solid #aaa;
+	
+}
+
 #page {
     margin:0 0;
     background-color: rgb(66, 57, 75);
@@ -34,6 +42,12 @@ body {
 h1 {
     background-color: rgb(50, 131, 150);
     color:#FFF; 
+	border-bottom: dotted ;	
+	bottom : 20px;
+	border-top: dotted;
+	border-left: dotted;
+	border-right: dotted;
+	border-width:thin;
     font-size: 50px;
     font-family: "calibri";
     text-align : center  
