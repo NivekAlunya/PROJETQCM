@@ -8,6 +8,7 @@
     text-decoration: none;
     border:0
 }
+
 body {
 	    min-height:1000px;
 }
@@ -20,8 +21,17 @@ input,select, option,button,textarea {
 
 #page {
     margin:0 0;
+    width: 1265px;
+    height:1000px;
     background-color: rgb(66, 57, 75);
     padding-top:20px;
+}
+#contenu
+{
+    font-size: 18px;
+    width: 550px;
+    text-align: justify;
+    min-height: 150px;
 }
 
 .header{	
@@ -48,10 +58,35 @@ h1 {
 	border-left: dotted;
 	border-right: dotted;
 	border-width:thin;
+	color:rgb(255,255,255);
     font-size: 50px;
     font-family: "calibri";
     text-align : center  
 }
 
+form.connexion 
+{
+    marging-bottom: 40px;
+    text-align : center;
+    font-size: 18px
+}
 
+form.connexion label 
+{
+    float: left;
+    min-width: 150px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.champtexte {
+    border-style: solid;
+    font-size: 18px;
+}
+
+form.connexion > .bloc_identifiant, form.connexion > .bloc_motdepasse
+{
+   marging-bottom: 5px;
+   font-size: 18px; 
+}
 

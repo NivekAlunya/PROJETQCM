@@ -9,27 +9,20 @@
 <body>
     <div id="page">
      <div id="contenu">
-       <form class="connexion" action="">
-       <br>
-       <br>
-       <br>
-         <div class="bloc_identifiant">
+       <form class="connexion" method="post" action="/QCM/AuthentifierAdministrateur" enctype="application/x-www-form-urlencoded">
+         <fieldset class="bloc_identifiant">
             <label for="identifiant">Login</label>
             <input class="champtexte" type="text" id="identifiant" name="identifiant" />
-            <br>
-            <br>
-         </div>
-         <div class="bloc_motdepasse">
+         </fieldset>
+         <fieldset class="bloc_motdepasse">
             <label for="motdepasse">Mot de passe</label>
             <input class="champtexte" type="text"  id="motdepasse" name="motdepasse" />
-         <br>
-         <br>
-         </div>
-         <div class="bloc_connexion">
+         </fieldset>
+         <fieldset class="bloc_connexion">
             <input type="submit" id="Valider" value="Valider" />
-            <input type="submit" id="Annuler" value="Annuler" />
-            <input type="submit" id="Accueil" value="Accueil" />
-         </div>
+            <input type="reset" id="Annuler" value="Annuler" />
+            <a href="/">Accueil</a>
+         </fieldset>
         </form>
     </div>
 </div>
