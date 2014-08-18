@@ -26,7 +26,6 @@
     <url-pattern>/MainServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
     <display-name>Authentification</display-name>
     <servlet-name>Authentification</servlet-name>
     <servlet-class>fr.eni_ecole.qcm.controller.AuthentificationServlet</servlet-class>
@@ -40,9 +39,8 @@
     <url-pattern>/AuthentifierAdministrateur</url-pattern>
   </servlet-mapping>
   <servlet>
-    <display-name>AuthentificationView</display-name>
     <servlet-name>AuthentificationView</servlet-name>
-    <jsp-file>/static/Authentification.html</jsp-file>
+    <jsp-file>/Authentification.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>AuthentificationView</servlet-name>
@@ -53,7 +51,6 @@
     <url-pattern>/AdministrateurConnection</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
     <display-name>ListerTest</display-name>
     <servlet-name>ListerTest</servlet-name>
     <servlet-class>fr.eni_ecole.qcm.controller.ListerTest</servlet-class>
@@ -71,5 +68,28 @@
   <servlet-mapping>
     <servlet-name>ListerTests</servlet-name>
     <url-pattern>/ListerTests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>SigninView</display-name>
+    <servlet-name>SigninView</servlet-name>
+    <jsp-file>/Authentification.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SigninView</servlet-name>
+    <url-pattern>/CandidatSignin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SigninView</servlet-name>
+    <url-pattern>/AdministrateurSignin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdministrationTheme</display-name>
+    <servlet-name>AdministrationTheme</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.AdministrationTheme</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdministrationTheme</servlet-name>
+    <url-pattern>/AdministrationTheme</url-pattern>
   </servlet-mapping>
 </web-app>
