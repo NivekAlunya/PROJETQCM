@@ -12,7 +12,7 @@
 
 /*------Texte---------------------------------------------------------------------------*/
 
-/* s'appel avec la balise: <h1>*/
+/* s'appelle avec la balise: <h1>*/
 h1 
 {
     background-color: #328396;    /*vert*/
@@ -125,6 +125,8 @@ form.connexion label
 body 
 {         
         background-color: #3B3B3B;
+        min-height: 800px;
+        padding: 20px;
 }
 
 
@@ -138,18 +140,32 @@ body
     box-shadow:4px 4px 6px #272727;
     padding-top:20px; 
     padding-bottom:20px;
-    margin : 20px;   
+    min-height: 800px;
+    position:relative;
 }
 
 
-/* s'appel avec : <div class="header">*/
-.header,.Pied_Page
+/* s'appelle avec : <div class="header">*/
+.header
 {   
     background-color: #328396;  
     margin-right : 200px;
     margin-left : 200px;
+    margin-bottom: 50px;
     padding:4px;
     box-shadow:4px 4px 6px #272727;
+}
+
+.Pied_Page
+{   
+    background-color: #328396;  
+    margin-right : 200px;
+    margin-left : 200px;
+    margin-bottom: 50px;
+    padding:4px;
+    box-shadow:4px 4px 6px #272727;
+    position:absolute;
+    bottom:0; 
 }
 
 
@@ -283,7 +299,7 @@ body
 
 
 .Bouton_Accueil,.Bouton_Question,.Bouton_Theme,.Bouton_Test,.Bouton_Inscription,
-.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif
+.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif,.Bouton_Cloturer
 {
     background-color:#6C6599;
     color:#FFFFFF; 
@@ -333,12 +349,12 @@ body
 
 
 .Checkbox {
-    float:left;
-    margin-left:560px;
+    float: right;
+    margin-left: 55px;
     width: 18px;
     height: 18px;
     background: #6C6599;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    /*box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);*/
     position: relative;
     padding: 4px;
 }
@@ -351,7 +367,7 @@ body
     height: 18px;
     left: 4px;
     top: 4px;
-    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    /*box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);*/
     background: #EDEBF0;
 }
 
@@ -364,7 +380,7 @@ body
     width: 17px;
     height: 17px;
     background: #484467;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    /*box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);*/
 }
 
 .Checkbox label:hover::after 
@@ -381,42 +397,38 @@ body
 .Radio_Bouton 
 {
     float:left;
-    width: 20px;
-    height: 20px;
-    background: #6C6599;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    width: 15px;
+    height: 15px;
     position: relative;
+    /*background: #6C6599;*/
+    /*-webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;*/
+    /*webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);*/
 }
-
-#Radio_Bouton 
-{
-    margin-top:3px;
-    margin-left:4px;
-}
-
-.Radio_Bouton label 
-{   
-    cursor: pointer;
-    position: absolute;
-    width: 12px;
-    height: 12px;
+.round {
+	width: 6px;
+    height: 6px;
+    padding: 3px;
+    background: #EDEBF0;
+    border: 3px solid #6C6599;
+    text-decoration:none;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    left: 4px;
-    top: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
     -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
     -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
-    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
-    background: #EDEBF0;
+}
+.Radio_Bouton.radio
+{   
+    cursor: pointer;
+    border:1px #fff solid;
 }
 
-.Radio_Bouton label:after 
+/*.Radio_Bouton label:after 
 {
     opacity: 0;
     content: "";
@@ -433,18 +445,25 @@ body
     box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
     padding:1px;
     right:1px;
-}
+}*/
 
 .Radio_Bouton label:hover::after 
 {
     opacity: 0.3;
 }
 
+.Radio_Bouton input[type=radio]
+{
+    opacity: 1;
+    margin-top:-3px;
+    margin-left:-4px;
+}
+
 .Radio_Bouton input[type=radio]:checked + label:after 
 {
     opacity: 1;
-    margin-bottom:2px;
-    margin-left:2px;
+    margin-bottom:-5px;
+    margin-left:-5px;
 }
 
 
@@ -525,23 +544,27 @@ body
 
 .barre_Navigation
 {
-    padding-left: 230px;
+   margin-bottom: -20px;
 }
 
 .Barre_Fleche
 {
     float:none;
-    width: 600px;
-    padding-top:30px;
+    padding-left: 150px;
 }
 
 
 #Barre_Recapitulatif
 {
     float: right;
-    width: 200px;
-    margin-left: 50px;
+    margin-right: -1px;
 }
+
+.Barre_Cloturer
+{
+    margin-top:30px;
+}
+
 
 /*------Zone de saisie---------------------------------------------------------------------------*/
 
