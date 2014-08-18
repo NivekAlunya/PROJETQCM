@@ -36,7 +36,7 @@ public class Candidat implements Serializable{
 	@Override
 	public String toString() {
 		return "Candidat [idCandidat=" + idCandidat + ", nom=" + nom
-				+ ", prenom=" + prenom + ", Promo=" + promo.getLibelle() + "]";
+				+ ", prenom=" + prenom + ", login=" + login + ", Promo=" + (promo != null ? promo.getLibelle() : "NULL") + "]";
 	}
 
 	public String getLogin() {

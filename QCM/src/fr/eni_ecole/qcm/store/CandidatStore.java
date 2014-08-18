@@ -103,10 +103,10 @@ public class CandidatStore {
 		try {
 			cnx = PoolConnexion.getConnection();
 			rqt = cnx.createStatement();
-			rs = rqt.executeQuery("SELECT c.idCandidat, c.Nom, c.Prenom, c.login, c.MotDePasse as MDP, p.codePromotion,p.Libelle FROM Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion");
+			rs = rqt.executeQuery("SELECT c.idCandidat, c.Nom, c.Prenom, c.login, c.MotDePasse, p.codePromotion,p.Libelle FROM Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion");
 			Candidat candidat = null;
 			while (rs.next()){
-				listeCandidat.add(buildCandidat(rs));				
+				listeCandidat.add(buildCandidat(rs));
 			}
 		} catch (Exception e) {
 		}
@@ -134,10 +134,9 @@ public class CandidatStore {
 				rs.getInt("idCandidat"),
 				rs.getString("Nom"),
 				rs.getString("Prenom"),
+				rs.getString("MotDePasse"),
 				rs.getString("login"),
-				rs.getString("MDP"),
 				promotion);					
-
 	}
 
 	public static Candidat rechercher(int idCandidat) throws Exception{
@@ -153,6 +152,35 @@ public class CandidatStore {
 			if (rs.next()){
 				candidat = buildCandidat(rs);
 			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (rs!=null) rs.close();
+			if (rqt!=null) rqt.close();
+			if (cnx!=null) cnx.close();
+		}
+		
+		return candidat;
+	}
+	
+	public static Candidat rechercher(String login, String MotDePasse) throws Exception{
+		Connection cnx=null;
+		PreparedStatement rqt=null;
+		ResultSet rs=null;
+		Candidat candidat = null;
+		try{
+			cnx=PoolConnexion.getConnection();
+			rqt=cnx.prepareStatement("select c.idCandidat, c.Nom, c.Prenom, c.login, c.MotDePasse, p.codePromotion, p.Libelle " +
+					"from Candidats c LEFT OUTER JOIN Promotions p ON p.codePromotion = c.codePromotion " +
+					"WHERE login = ? AND MotDePasse= ? ");
+			rqt.setString(1, login);
+			rqt.setString(2, MotDePasse);
+			rs=rqt.executeQuery();
+			if (rs.next()){
+				candidat = buildCandidat(rs);
+			}
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
