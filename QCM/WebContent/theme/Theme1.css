@@ -1,92 +1,564 @@
+/* s'applique à tous les éléments*/
 * {
-    color:#fff;
+    color:#6C6599;
     padding:0;
     margin:0;
     font-family: "calibri";
-    font-size: 12px;
+    font-size: 20px;
     font-weight: normal;
     text-decoration: none;
-    border:0
 }
 
-body {
-	    min-height:1000px;
-}
 
-input,select, option,button,textarea {
-	color:#000;
-	border:1px solid #aaa;
-	
-}
+/*------Texte---------------------------------------------------------------------------*/
 
-#page {
-    margin:0 0;
-    width: 1265px;
-    height:1000px;
-    background-color: rgb(66, 57, 75);
-    padding-top:20px;
-}
-#contenu
+/* s'appel avec la balise: <h1>*/
+h1 
 {
-    font-size: 18px;
-    width: 550px;
-    text-align: justify;
-    min-height: 150px;
-}
-
-.header{	
-	background-color: rgb(50, 131, 150);
-	height:68px;
-    margin-right : 200px;
-    margin-left : 200px;
-    padding:4px;
-}
-.titre {
-	border-bottom: dotted ; 
-    border-top: dotted; 
-    border-left: dotted;
-    border-right: dotted;   
-    border-width:thin;
-    margin:0;
-}
-h1 {
-    background-color: rgb(50, 131, 150);
-    color:#FFF; 
-	border-bottom: dotted ;	
-	bottom : 20px;
-	border-top: dotted;
-	border-left: dotted;
-	border-right: dotted;
-	border-width:thin;
-	color:rgb(255,255,255);
+    background-color: #328396;    /*vert*/
+    color:#FFFFFF;                /*blanc*/
     font-size: 50px;
     font-family: "calibri";
-    text-align : center  
+    text-align : center;  
 }
 
-form.connexion 
+
+h2 
 {
-    marging-bottom: 40px;
-    text-align : center;
-    font-size: 18px
+    margin-top : 20px;
+    color:#B84D61;       /*rouge*/
+    font-size: 25px;
+    font-family: "calibri";  
 }
+
+
+h3
+{   
+    color:#328396;                      /*vert*/
+    border-bottom: 2px solid #328396;   /*vert*/
+    font-size: 30px;
+    font-family: "calibri";
+    text-align : left ;
+    padding-left: 20px; 
+}
+
+
+h4,.Nom_utilisateur, .Chronometre
+{   
+    color:#6C6599;                    /*bleu/violet*/
+    font-size: 20px;
+    font-family: "calibri";
+    margin-left: 20px;
+}
+
+
+h5
+{
+    color:#B84D61;                   /*rouge*/
+    font-size: 20px;
+    font-family: "calibri";
+}
+
+
+h6
+{
+    color:#6C6599;                    /*bleu/violet*/
+    font-size: 20px;
+    font-family: "calibri";
+    margin-left: 40px;
+}
+
+p
+{   
+    color:#6C6599;                    /*bleu/violet*/
+    font-size: 20px;
+    font-family: "calibri";
+    margin-left: 80px;
+    vertical-align:bottom;
+    margin-top: auto;
+    margin-bottom: auto; 
+}
+
+
+.Test_Selectionner
+{
+    color:#328396;   /*vert*/                   
+    font-size: 20px;
+    font-family: "calibri";
+    margin-left: 20px;
+}
+
+
+li
+{   
+    margin-top : 10px;
+    text-decoration: underline;
+    color:#6C6599; 
+    font-size: 20px;
+    font-family: "calibri";
+}
+
+
+ul
+{
+    margin-top : 10px;
+    padding-left:100px;
+    color:#433A4B;  
+}
+
 
 form.connexion label 
 {
+    color:#433A4B;
+    font-size: 20px;
+    font-family: "calibri";
     float: left;
-    min-width: 150px;
-    font-weight: bold;
-    font-size: 18px;
+    min-width: 130px;
+    text-align: left;
+    margin-right:20px;
 }
 
-.champtexte {
-    border-style: solid;
-    font-size: 18px;
+
+/*------Fond---------------------------------------------------------------------------*/
+
+
+body 
+{         
+        background-color: #3B3B3B;
 }
 
-form.connexion > .bloc_identifiant, form.connexion > .bloc_motdepasse
+
+/*s'appel avec la balise: <div id="page">*/
+#page 
 {
-   marging-bottom: 5px;
-   font-size: 18px; 
+    margin:0 0;
+    background-color: #433A4B;   
+    border-top : 1px solid #2B2B2B;
+    border-left : 1px solid #2B2B2B;
+    box-shadow:4px 4px 6px #272727;
+    padding-top:20px; 
+    padding-bottom:20px;
+    margin : 20px;   
 }
 
+
+/* s'appel avec : <div class="header">*/
+.header,.Pied_Page
+{   
+    background-color: #328396;  
+    margin-right : 200px;
+    margin-left : 200px;
+    padding:4px;
+    box-shadow:4px 4px 6px #272727;
+}
+
+
+.cadre
+{
+    border: dotted ;   
+    border-width:thin;
+    color:#FFFFFF;
+    margin:0;
+    padding-top:2px;
+}
+
+
+.fond_selection
+{
+    background-color: #FFFFFF;  
+    margin-right : 200px;
+    margin-left : 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding : 50px;
+    box-shadow:4px 4px 6px #272727;   
+}
+
+
+.fond_confirmation
+{
+    background-color: #FFFFFF;  
+    border: 2px solid #328396;
+    margin-right : 325px;
+    margin-left : 325px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow:4px 4px 6px #272727;   
+}
+
+
+/*------Bouton---------------------------------------------------------------------------*/
+
+.bouton
+{
+    background-color: #FFFFFF;  
+}
+
+
+.bouton_Choix_Espace
+{
+    background-color:#6C6599;
+    color:#FFFFFF; 
+    font-size: 20px;
+    font-family: "calibri";
+    text-align : center;
+    width:300px;
+    padding-right:20px;
+    padding-left:20px;
+    margin:25px;    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom:2px solid #565656;
+    border-right:2px solid #565656;
+    border-top:2px solid #C1BFC3;
+    border-left:2px solid #C1BFC3; 
+}
+
+
+.bouton_Choix_Espace:active 
+{
+    background-color: #484467;
+}
+
+
+.Bouton_Valider,.Bouton_Oui
+{
+    background-color:#328396;
+    color:#FFFFFF; 
+    font-size: 20px;
+    font-family: "calibri";
+    text-align : center;
+    padding-right:10px;
+    padding-left:10px;
+    margin:4%;; 
+    border-bottom:2px solid #565656;
+    border-right:2px solid #565656;
+    border-top:2px solid #C1BFC3;
+    border-left:2px solid #C1BFC3; 
+    
+}
+
+
+.Bouton_Valider:active 
+{
+    background-color: #1D4E55;
+}
+
+
+.Bouton_Oui:active 
+{
+    background-color: #1D4E55;
+}
+
+
+.Bouton_Annuler,.Bouton_Non
+{
+    background-color:#EBAB51;
+    color:#FFFFFF; 
+    font-size: 20px;
+    font-family: "calibri";
+    text-align : center;
+    padding-right:10px;
+    padding-left:10px;
+    margin:4%;
+    border-bottom:2px solid #565656;
+    border-right:2px solid #565656;
+    border-top:2px solid #C1BFC3;
+    border-left:2px solid #C1BFC3; 
+
+}
+
+
+.Bouton_Annuler:active 
+{
+    background-color: #E89C2E;
+}
+
+
+.Bouton_Non:active 
+{
+    background-color: #E89C2E;
+}
+
+
+.Bouton_Accueil,.Bouton_Question,.Bouton_Theme,.Bouton_Test,.Bouton_Inscription,
+.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif
+{
+    background-color:#6C6599;
+    color:#FFFFFF; 
+    font-size: 20px;
+    font-family: "calibri";
+    text-align : center;
+    padding-right:10px;
+    padding-left:10px;
+    margin:4%;
+    border-bottom:2px solid #565656;
+    border-right:2px solid #565656;
+    border-top:2px solid #C1BFC3;
+    border-left:2px solid #C1BFC3; 
+ 
+}
+
+
+.Bouton_Accueil:active 
+{
+    background-color: #484467;
+}
+
+
+.Bouton_Question:active 
+{
+    background-color: #484467;
+}
+
+
+.Bouton_Theme:active 
+{
+    background-color: #484467;
+}
+
+
+.Bouton_Test:active 
+{
+    background-color: #484467;
+}
+
+
+.Bouton_Inscription:active 
+{
+    background-color: #484467;
+}
+
+
+
+.Checkbox {
+    float:left;
+    margin-left:560px;
+    width: 18px;
+    height: 18px;
+    background: #6C6599;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+    padding: 4px;
+}
+
+
+.Checkbox label {
+    cursor: pointer;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 4px;
+    top: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    background: #EDEBF0;
+}
+
+
+.Checkbox label:after 
+{
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: #484467;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.Checkbox label:hover::after 
+{
+    opacity: 0.3;
+}
+
+.Checkbox input[type=checkbox]:checked + label:after 
+{
+    opacity: 1;
+}
+
+
+.Radio_Bouton 
+{
+    float:left;
+    width: 20px;
+    height: 20px;
+    background: #6C6599;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+#Radio_Bouton 
+{
+    margin-top:3px;
+    margin-left:4px;
+}
+
+.Radio_Bouton label 
+{   
+    cursor: pointer;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    left: 4px;
+    top: 4px;
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    background: #EDEBF0;
+}
+
+.Radio_Bouton label:after 
+{
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #484467;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    padding:1px;
+    right:1px;
+}
+
+.Radio_Bouton label:hover::after 
+{
+    opacity: 0.3;
+}
+
+.Radio_Bouton input[type=radio]:checked + label:after 
+{
+    opacity: 1;
+    margin-bottom:2px;
+    margin-left:2px;
+}
+
+
+/*------Barre outil---------------------------------------------------------------------------*/
+
+.barre_3boutons
+{
+    margin-top:50px;
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.barre_boutons_OuiNon
+{
+    margin-bottom:20px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.barre_session,.barre_Recap_Question
+{
+    margin-bottom:20px;
+    width: 100%;
+    height:30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.barre_menu
+{
+    margin-top:50px;
+    width: 800px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.barre_passage_Test
+{
+    margin-top:40px;
+}
+
+
+.Barre_Confirmation
+{   
+    margin:20px;    
+}
+
+
+.displayed 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+
+.marquage_question
+{
+    float:right;
+    width:auto;
+    vertical-align:middle;  
+}
+
+.Numero_question
+{
+    float:left;
+    vertical-align:middle;  
+}
+
+.barre_Navigation
+{
+    padding-left: 230px;
+}
+
+.Barre_Fleche
+{
+    float:none;
+    width: 600px;
+    padding-top:30px;
+}
+
+
+#Barre_Recapitulatif
+{
+    float: right;
+    width: 200px;
+    margin-left: 50px;
+}
+
+/*------Zone de saisie---------------------------------------------------------------------------*/
+
+
+.champtexte 
+{   
+    border-style: solid;
+    border-color: #328396;
+    height:20px;
+    background-color : #9AC2CA; 
+}
+
+
+form.connexion, .bloc_identifiant,.bloc_motdepasse
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:300px;
+}

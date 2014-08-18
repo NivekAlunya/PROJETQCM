@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<base href="http://localhost:8080/QCM/"/>
 <title>QCM ENI</title>
-<link rel="stylesheet" type="text/css" href="Theme1.css" />
+<base href="http://localhost:8080/QCM/"/>
+<link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
 </head>
 <body>
     <div id="page">
-    <div class="header" >
-        <div class="titre"><h1>QCM ENI</h1></div>
-    </div>
-        <div id="contenu"> 
-            <form class="bouton" action="">
-                <input type="submit" id="EspaceFormateur" value="Espace formateur" />
-                <br />
-                <br />
-                <input type="submit" id="EspaceCandidat" value="Espace candidat" />
-            </form>
+        <div class="header" >
+            <div class="cadre"><h1>QCM ENI</h1></div>
         </div>
-     </div>
-        
+        <div class="fond_selection">         
+            <a href="static/AuthentificationFormateur.html" type="submit" class="bouton_Choix_Espace" >Espace formateur</a>
+            <a href="static/AuthentificationCandidat.html" type="submit" class="bouton_Choix_Espace" >Espace candidat</a>         
+        </div>
+        <div class="Pied_Page">
+            <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
+        </div>
+     </div>        
 </body>
 </html>

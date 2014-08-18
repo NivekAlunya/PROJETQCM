@@ -2,19 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<base href="http://localhost:8080/QCM/"/>
+<title>QCM ENI-Confirmation cloture</title>
+<link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
 </head>
 <body>
+<div id="page">
     <div>
+        <div class="fond_confirmation"> 
+            <h3> Confirmation </h3>
+            <div class="Barre_Confirmation"> 
+                <img class="displayed" width=10%  alt="" src="image/attention.jpg" align=left>
+                <p>Voulez-vous vraiment clôturer votre test? </p><br />                     
+            </div>
+            
     
-    <header> Confirmation </header>
-    <p> Voulez vous vraiment cloturer votre test? </p><br />
-   
-    
-        <form method="get"> 
-            <input type="submit" value="Oui">
-            <input type="submit" value="Non">
-        </form>   
+            <div class="barre_boutons_OuiNon"> 
+                <a href="static/Resultat.html" type="submit" class="Bouton_Oui" >Oui</a>
+                <a href="static/Recapitulatif.html" type="submit" class="Bouton_Non" >Non</a>
+            </div> 
+        </div>   
     </div>  
+</div>
 </body>
 </html>

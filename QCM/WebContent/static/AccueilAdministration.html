@@ -4,28 +4,33 @@
   <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <title>QCM - ENI Accueil administration</title>
     <base href="http://localhost:8080/QCM/"/>
-    <link rel="stylesheet" type="text/css" href="theme/Themetest.css" />
+    <link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
 </head>
 <body>
 <div id="page">
-     <div id="titre">
-        <h1>QCM - ENI Accueil administration</h1>
-     </div>
-    
-     <div class="menu">
-
-       
-        <a href="/QCM/index.html">Accueil</a>
-        <a href="/QCM/AccesQuestions">Question</a>
-        <a href="/QCM/AccesTheme">Theme</a>
-        <a href="/QCM/AccesTest">Test</a>
-        <a href="/QCM/AccesInscription">Inscription</a>
-        
-        <br />
-        <br />
-       </div> 
+    <div class="header" >
+        <div class="cadre"><h1>Accueil administration</h1></div>
+    </div>  
+    <div class="fond_selection">
+            <div class="barre_session"> 
+                <div class="Nom_utilisateur">
+                    <!-- include info administrateur -->
+                </div>
+            </div>
+            <div class="barre_menu">  
+                <a href="static/Accueil.html" type="submit" class="Bouton_Accueil" >Accueil</a>
+                <a href="static/AccesQuestion" type="submit" class="Bouton_Question" >Question</a>
+                <a href="static/AccesTheme" type="submit" class="Bouton_Theme" >Theme</a>
+                <a href="static/AccesTest" type="submit" class="Bouton_Test" >Test</a>
+                <a href="static/AccesInscription" type="submit" class="Bouton_Inscription" >Inscription</a>       
+                <br />
+                <br />
+            </div>              
+    </div>
+    <div class="Pied_Page">
+            <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
+    </div>    
 </div>
-
 </body>
 </html>
 
