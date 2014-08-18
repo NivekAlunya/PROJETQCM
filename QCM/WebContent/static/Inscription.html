@@ -8,9 +8,17 @@
 
 <body style="width:100%;">
 	<div id="page" style="margin:0 100px">
+	    <div class="header" >
+        <div class="cadre"><h1>Inscription</h1></div>
+        </div>
+        <div class="fond_selection">
+            <div class="barre_session"> 
+                <div class="Nom_utilisateur">
 	    <!-- include info administrateur -->
+	            </div>
+	        </div>
 	    <nav>
-	        <a href="Accueil">Accueil</a> <b> | Inscrire à un test </b>
+	        <a href="Accueil.html">Accueil</a> <b> | Inscrire à un test </b>
 	    </nav>
 	    <form action="" method="post" enctype="application/x-www-form-urlencoded">
 		    <fieldset>
@@ -25,10 +33,10 @@
 		        <label for="dateDebut">Activée le : </label>
 	            <input type="datetime" name="dateDebut" id="dateDebut" /> 
                 <label for="dateFin">jusqu'au: </label>
-                <input type="datetime" name="dateFin" id="dateFin" /> 
-		    </fieldset>
+               <input type="datetime" name="dateFin" id="dateFin" /> 
+		    <!-- </fieldset>
 		    <fieldset>
-		      <label for="listePromotion">Non inscrit </label>
+		      <label for="listePromotion">Non inscrit<br/>Promotion</label>
 		      <select id="listePromotion" multiple="multiple">
 		      <option value="1">promotion1</option>
 		      </select>
@@ -38,12 +46,39 @@
               </select>
 		    </fieldset>
 		    <fieldset>
-		    <a href="#ajouter-promotion"></a>
-		    <a href="#retirer-promotion"></a>
-		    <a href="#ajouter-candidat"></a>
-            <a href="#retirer-candidat"></a>
+		      <a href="#ajouter-promotion">+promo</a>
+		      <a href="#retirer-promotion">-promo</a>
+		      <a href="#ajouter-candidat">+candidat</a>
+              <a href="#retirer-candidat">-candidat</a>
 		    </fieldset>
+		    <fieldset>
+		      <label for="listeSelection">Inscrits</label>
+              <select id="listeSelection" multiple="multiple">
+              <option value="1">selection1</option>
+              </select>
+		    </fieldset> -->
+		    
+		    <fieldset>
+		      <ul>
+		          <li><input type="checkbox"><label>Stagiaire1 </label>
+		          <li><input type="checkbox"><label>Stagiaire2 </label>
+		          <li><input type="checkbox"><label>Stagiaire3 </label>
+		      </ul>
+		    </fieldset>
+		    <fieldset>
+		      <button type="submit" name="validerForm" value="valider">Envoyer</button>
+		      <button type="submit" name="supprimerForm" value="supprimer">Supprimer</button>
+		      <button type="reset" name="annulerForm" value="annuler">Annuler</button>
+		    </fieldset>
+		    
+		   
 	    </form>
+	   
+	</div>
+	
+	 <div class="Pied_Page">
+            <div class="cadre"><img  width=100%  src="/QCM/image/pieddepageENI.png" ></div>
+        </div>
 	</div>
 </body>
 </html>
