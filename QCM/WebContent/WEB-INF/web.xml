@@ -35,15 +35,10 @@
     <servlet-name>Authentification</servlet-name>
     <url-pattern>/AuthentifierCandidat</url-pattern>
   </servlet-mapping>
-
   <servlet-mapping>
     <servlet-name>Authentification</servlet-name>
     <url-pattern>/AuthentifierAdministrateur</url-pattern>
   </servlet-mapping>
-
-
-
-
   <servlet>
     <display-name>AuthentificationView</display-name>
     <servlet-name>AuthentificationView</servlet-name>
@@ -57,5 +52,24 @@
     <servlet-name>AuthentificationView</servlet-name>
     <url-pattern>/AdministrateurConnection</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>ListerTest</display-name>
+    <servlet-name>ListerTest</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.ListerTest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerTest</servlet-name>
+    <url-pattern>/ListerTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerTests</display-name>
+    <servlet-name>ListerTests</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.ListerTests</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerTests</servlet-name>
+    <url-pattern>/ListerTests</url-pattern>
+  </servlet-mapping>
 </web-app>
