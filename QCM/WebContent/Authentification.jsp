@@ -19,7 +19,8 @@
        %>
         <div class="fond_selection"> 
              
-           <form class="connexion" method="post" action="<%=action %>" enctype="application/x-www-form-urlencoded">
+           <form  class="connexion" method="post" action="<%=action %>" enctype="application/x-www-form-urlencoded">
+               <div align="center">
                 <div class="bloc_identifiant">
                     <label for="identifiant">Login</label>
                     <input class="champtexte" type="text" id="identifiant" name="identifiant"/>
@@ -27,13 +28,15 @@
                 <br>
                 <div class="bloc_motdepasse">
                     <label for="motdepasse">Mot de passe</label>
-                    <input name="motdepasse" size="15" type="password" id="motdepasse" required="required"/>
+                    <input name="motdepasse" size="20" type="password" id="motdepasse" required="required"/>
                 </div>
+                
 	            <div class="barre_3boutons">
 	                <input type="submit" id="Valider" value="Valider" class="Bouton_Valider" />
 	                <input type="reset" id="Annuler" value="Annuler" class="Bouton_Annuler" />
 	                <a href="default.jsp" type="submit" class="Bouton_Accueil" >Accueil</a>
-	            </div>                           
+	            </div> 
+	            </div>                          
             </form>
         </div>
         <%@ include file="/piedDePage.jspf" %> 

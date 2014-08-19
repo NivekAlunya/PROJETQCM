@@ -648,3 +648,8 @@ form.connexion, .bloc_identifiant,.bloc_motdepasse
     width:100px;
 }
 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:390px;
+}
