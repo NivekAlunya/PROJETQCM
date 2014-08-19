@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni_ecole.qcm.model.Administrateur;
+import fr.eni_ecole.qcm.model.Candidat;
 import fr.eni_ecole.qcm.store.AdministrateurStore;
+import fr.eni_ecole.qcm.store.CandidatStore;
 
 /**
  * Servlet implementation class ValiderAuthentification
@@ -49,22 +51,57 @@ public class AuthentificationServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
+    	
 		if (request.getRequestURI().equals(request.getContextPath() + "/AuthentifierAdministrateur"))
 		{
+			System.out.println( "/AuthentifierAdministrateur");
     		Administrateur administrateur = AdministrateurStore.getAdministrateur(request.getParameter("identifiant"), request.getParameter("motdepasse"));
-    		if(administrateur != null ){
+    		if(administrateur != null )
+    		{
     			request.getSession().setAttribute("administrateur", administrateur);
     			// OK rediriger vers le menu accueil administration
-    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/static/AccueilAdministration.html");
+    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/AccueilAdministration.jsp");
     			dispatcher.forward(request, response);
     		}
-    		else {
+    		else 
+    		{
     			System.out.println("Authentification a echoué!");
-    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/static/Authentification.html");
+    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/Authentification.jsp");
     			dispatcher.forward(request, response);
     		}
 		}
-    	
-    }
-
+    	else 
+		if (request.getRequestURI().equals(request.getContextPath() + "/AuthentifierCandidat"))
+		{
+			
+			Candidat candidat;
+			try 
+			{
+				candidat = CandidatStore.rechercher(request.getParameter("identifiant"), request.getParameter("motdepasse"));
+				if (candidat != null )
+				{
+					
+	    			request.getSession().setAttribute("administrateur", candidat);
+	    			// OK rediriger vers le menu accueil administration
+	    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/AccueilPassageTest.jsp");
+	    			dispatcher.forward(request, response);
+	    		}
+	    		else 
+	    		{
+	    			System.out.println("Authentification a echoué!");
+	    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/Authentification.jsp");
+	    			dispatcher.forward(request, response);
+	    		}
+				
+			} catch (Exception e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+		
 }
+
+
