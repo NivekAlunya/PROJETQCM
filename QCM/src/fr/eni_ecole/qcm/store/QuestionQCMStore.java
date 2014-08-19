@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.*;
 public class QuestionQCMStore {
 	
-	public static void getQCMForInscription(Inscription insc) {
+	public static ArrayList<QuestionQCM> getQCMForInscription(Inscription insc) {
 		String query = "select q.idQuestion,q.Enonce,q.URLimage " +
 			" ,t.IdTheme,t.Nom " +
 			" ,r.idReponse,r.Correcte,r.Proposition " +
@@ -80,6 +80,7 @@ public class QuestionQCMStore {
 				e.printStackTrace();
 			}
 		}
+		return list;
 	}
 
 	private static void genererQCM(Inscription insc) {
@@ -108,11 +109,13 @@ public class QuestionQCMStore {
 				}
 				if(cptr < rs.getInt("nombrequestion")) {
 					
-					QuestionQCM qcm = new QuestionQCM(0,"N",insc,
-						new Question(rs.getInt("idquestion"),rs.getString("enonce"),
-							rs.getString("urlimage"),new Theme(rs.getInt("idTheme"), rs.getString("nom")),
-							null)
-					);
+					QuestionQCM qcm = new QuestionQCM(0,"N",insc,new Question(
+							rs.getInt("idquestion"),
+							rs.getString("enonce"),
+							rs.getString("urlimage"),
+							new Theme(rs.getInt("idTheme"), rs.getString("nom")),
+							null),
+						null);
 					ajouter(qcm);
 					cptr++;
 				}

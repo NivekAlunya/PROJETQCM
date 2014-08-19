@@ -16,9 +16,7 @@ public class InscriptionStore {
 	public static void ajouter(Inscription inscription){
 		Connection cnx=null;
 		PreparedStatement rqt=null;
-
 		try{
-
 			cnx=PoolConnexion.getConnection();
 			CallableStatement cstmt = cnx.prepareCall("{CALL dbo.insertInscription(?,?,?,?,?,?,?,?,?)}");
 			cstmt.setInt(1, inscription.getCandidat().getIdCandidat());
@@ -161,8 +159,6 @@ public class InscriptionStore {
 				e.printStackTrace();
 			}
 		}
-		
 		return null;
 	}	
-	
 }
