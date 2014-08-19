@@ -87,4 +87,14 @@
     <servlet-name>AdministrationTheme</servlet-name>
     <url-pattern>/AdministrationTheme</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QuestionQCMServlet</display-name>
+    <servlet-name>QuestionQCMServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.QuestionQCMServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuestionQCMServlet</servlet-name>
+    <url-pattern>/QuestionQCM</url-pattern>
+  </servlet-mapping>
 </web-app>
