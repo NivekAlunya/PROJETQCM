@@ -69,9 +69,7 @@ public class AuthentificationServlet extends HttpServlet {
     			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/Authentification.jsp");
     			dispatcher.forward(request, response);
     		}
-		}
-    	else 
-		if (request.getRequestURI().equals(request.getContextPath() + "/AuthentifierCandidat"))
+		} else if (request.getRequestURI().equals(request.getContextPath() + "/AuthentifierCandidat"))
 		{
 			
 			Candidat candidat;
@@ -81,7 +79,7 @@ public class AuthentificationServlet extends HttpServlet {
 				if (candidat != null )
 				{
 					
-	    			request.getSession().setAttribute("administrateur", candidat);
+	    			request.getSession().setAttribute("candidat", candidat);
 	    			// OK rediriger vers le menu accueil administration
 	    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/AccueilPassageTest.jsp");
 	    			dispatcher.forward(request, response);
