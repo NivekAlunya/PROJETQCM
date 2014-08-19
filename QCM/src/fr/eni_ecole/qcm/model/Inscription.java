@@ -5,6 +5,7 @@ package fr.eni_ecole.qcm.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.*;
 
 /**
  * @author d144sellierb
@@ -18,24 +19,22 @@ public class Inscription implements Serializable{
 	private String rapport;
 	private Date dateDebut;
 	private Date dateFin;
-	private String eMail;
+	private String email;
 	private Integer tempsEcoule;
+	private ArrayList<QuestionQCM> questions;
 	
-	
-	
-
 	@Override
 	public String toString() {
 		return "Inscription [idInscription=" + idInscription + ", candidat="
 				+ candidat.toString() + ", test=" + test.toString() + ", typeInscription="
 				+ typeInscription + ", rapport=" + rapport + ", dateDebut="
-				+ dateDebut + ", dateFin=" + dateFin + ", eMail=" + eMail
+				+ dateDebut + ", dateFin=" + dateFin + ", eMail=" + email
 				+ ", tempsEcoule=" + tempsEcoule + "]";
 	}
 
 	public Inscription(Integer idInscription, Candidat candidat,
 			Test test, String typeInscription, String rapport,
-			Date dateDebut, Date dateFin, String eMail, Integer tempsEcoule) {
+			Date dateDebut, Date dateFin, String email, Integer tempsEcoule) {
 		super();
 		this.idInscription = idInscription;
 		this.candidat = candidat;
@@ -44,8 +43,9 @@ public class Inscription implements Serializable{
 		this.rapport = rapport;
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
-		this.eMail = eMail;
+		this.email = email;
 		this.tempsEcoule = tempsEcoule;
+		this.questions = null;
 	}
 	
 	public Inscription (){
@@ -56,9 +56,6 @@ public class Inscription implements Serializable{
 	public Integer getIdInscription() {
 		return idInscription;
 	}
-
-
-
 
 	public void setIdInscription(Integer idInscription) {
 		this.idInscription = idInscription;
@@ -101,62 +98,38 @@ public class Inscription implements Serializable{
 		return dateDebut;
 	}
 
-
-
-
 	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
 	}
-
-
-
 
 	public Date getDateFin() {
 		return dateFin;
 	}
 
-
-
-
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
 
-
-
-
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-
-
-
-	public void seteMail(String eMail) {
+	public void setEmail(String email) {
 		if (typeInscription == "ECF")
 		{
-			this.eMail = eMail;
+			this.email = email;
 			}
 		else {
-			this.eMail = null;
+			this.email = null;
 		}
-		
 	}
-
-
-
 
 	public Integer getTempsEcoule() {
 		return tempsEcoule;
 	}
 
-
-
-
 	public void setTempsEcoule(Integer tempsEcoule) {
 		this.tempsEcoule = tempsEcoule;
 	}
-
-
 
 }
