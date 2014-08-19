@@ -107,7 +107,8 @@ public class ThemeStore
 	}
 	
 	
-	public static Theme rechercherTheme(int idTheme) throws Exception{
+	public static Theme rechercherTheme(int idTheme) throws Exception
+	{
 		Connection cnx=null;
 		PreparedStatement rqt=null;
 		ResultSet rs=null;
@@ -118,6 +119,35 @@ public class ThemeStore
 			rs=rqt.executeQuery();
 			if (rs.next()){
 				
+				return new Theme(rs.getInt("idTheme"),rs.getString("nom"));								
+			} else {
+				return null;
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally{
+			if (rs!=null) rs.close();
+			if (rqt!=null) rqt.close();
+			if (cnx!=null) cnx.close();
+		}
+
+		return null;
+	}	
+	public static Theme rechercherTheme(String Nom) throws Exception
+	{
+		Connection cnx=null;
+		PreparedStatement rqt=null;
+		ResultSet rs=null;
+		try{
+			cnx=PoolConnexion.getConnection();
+			rqt=cnx.prepareStatement("select * from Themes where nom = ?");
+			rqt.setString(1, Nom);
+			System.out.println(Nom);
+			rs=rqt.executeQuery();
+			if (rs.next()){
+				System.out.println("retour" + (rs.getString("nom")));
 				return new Theme(rs.getInt("idTheme"),rs.getString("nom"));								
 			} else {
 				return null;
