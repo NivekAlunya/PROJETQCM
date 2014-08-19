@@ -14,10 +14,12 @@
         <div class="header" >
             <div class="cadre"><h1>Authentification</h1></div>
         </div>
-       
+       <%
+        String action = request.getContextPath() + (request.getRequestURI().equals(request.getContextPath() + "/AdministrateurSignin") ? "/AuthentifierAdministrateur" : "/AuthentifierCandidat");
+       %>
         <div class="fond_selection"> 
              
-           <form class="connexion" method="post" action="/QCM/AuthentifierAdministrateur" enctype="application/x-www-form-urlencoded">
+           <form class="connexion" method="post" action="<%=action %>" enctype="application/x-www-form-urlencoded">
                 <div class="bloc_identifiant">
                     <label for="identifiant">Login</label>
                     <input class="champtexte" type="text" id="identifiant" name="identifiant"/>

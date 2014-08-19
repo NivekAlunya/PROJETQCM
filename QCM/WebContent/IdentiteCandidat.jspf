@@ -1,0 +1,9 @@
+<div class="Nom_utilisateur">
+                 <!-- include info administrateur -->        
+    <jsp:useBean id="administrateur" class="fr.eni_ecole.qcm.model.Candidat" scope="session" />
+    <p>
+       Bonjour <jsp:getProperty property="prenom" name="administrateur"/> <jsp:getProperty property="nom" name="administrateur"/>  
+    </p>
+             
+                   
+</div>
