@@ -9,7 +9,7 @@
 <body style="width:100%;">
 	<div id="page" style="margin:0 100px">
 	    <div class="header" >
-        <div class="cadre"><h1>Inscription</h1></div>
+            <div class="cadre"><h1>Inscription</h1></div>
         </div>
         <div class="fond_selection">
             <div class="barre_session"> 
@@ -18,8 +18,9 @@
 	            </div>
 	        </div>
 	    <nav>
-	        <a href="Accueil.html">Accueil</a> <b> | Inscrire à un test </b>
+	        <a href="Accueil.html" id="text_menu">Accueil</a> <b> | Inscrire à un test </b>
 	    </nav>
+	    <br>
 	    <form action="" method="post" enctype="application/x-www-form-urlencoded">
 		    <fieldset>
 		       <label for="listeTest">Test :</label>
@@ -29,13 +30,20 @@
 	            <option value="2">test 2</option>
 	           </select>
 		    </fieldset>
-		    <fieldset>
-		        <label for="dateDebut">Activée le : </label>
-	            <input type="datetime" name="dateDebut" id="dateDebut" /> 
-                <label for="dateFin">jusqu'au: </label>
-               <input type="datetime" name="dateFin" id="dateFin" /> 
-		    <!-- </fieldset>
-		    <fieldset>
+		    <br>
+		    <fieldset>	
+		       
+		          <div class="Barre_Date_Debut">
+		               <label for="dateDebut">Activée le : </label>
+	                   <input type="datetime" name="dateDebut" id="ChampDateDebut" /> 
+	               </div>
+	               <div class="Barre_Date_Fin">
+                        <label for="dateFin">jusqu'au: </label>
+                        <input  type="datetime" name="dateFin" id="ChampDateFin" /> 
+                    </div>
+              
+		     </fieldset>
+		  <!--<fieldset>
 		      <label for="listePromotion">Non inscrit<br/>Promotion</label>
 		      <select id="listePromotion" multiple="multiple">
 		      <option value="1">promotion1</option>
@@ -58,9 +66,8 @@
               </select>
 		    </fieldset> -->
 		    
-		    <fieldset>
-		      <ul>
-		          <li><input type="checkbox"><label>Stagiaire1 </label>
+		    <fieldset>		    	    
+		     <ul><li><input type="checkbox" ><label>Stagiaire1 </label>
 		          <li><input type="checkbox"><label>Stagiaire2 </label>
 		          <li><input type="checkbox"><label>Stagiaire3 </label>
 		      </ul>
