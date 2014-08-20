@@ -2,7 +2,7 @@
                  <!-- include info candidat -->        
     <jsp:useBean id="candidat" class="fr.eni_ecole.qcm.model.Candidat" scope="session" />
     <p>
-       Bonjour <jsp:getProperty property="prenom" name="candidat"/> <jsp:getProperty property="nom" name="candidat"/>  
+       <jsp:getProperty property="prenom" name="candidat"/> <jsp:getProperty property="nom" name="candidat"/> - <jsp:getProperty property="promo" name="candidat"/> 
     </p>
              
                    

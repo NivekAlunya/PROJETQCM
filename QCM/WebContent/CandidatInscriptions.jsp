@@ -14,25 +14,24 @@
   <link media="all" rel="stylesheet" href="<%=request.getContextPath()%>/theme/Theme1.css" type="text/css"/>
 </head>
 <body>
-
+<div id="page">
     <div class="header" >
         <div class="cadre"><h1>Accueil passage d'un test</h1></div>
     </div>
     <div class="fond_selection">
             <div class="barre_session"> 
                 <div class="Nom_utilisateur">
-                    <!-- include info candidat -->
+                    <%@ include file="/IdentiteCandidat.jspf" %>
                 </div>
             </div>
             <h2>Sélectionnez le test que vous souhaitez passer :</h2>
             <ul>
-            <% for (Test test : tests) {%> 
-               <li><a href ="#"><%=test.getNom()%></a></li>
+            <% for (Test test : tests) {%>
+               <li><a href ="ConfirmationPassageTest.jsp"><%=test.getNom()%></a></li>
             <%}%>   
             </ul>
     </div>
-    <div class="Pied_Page">
-            <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
-    </div>
+    <%@ include file="/piedDePage.jspf" %>
+</div>
 </body>
 </html>

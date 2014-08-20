@@ -1,0 +1,8 @@
+<div class="Test_Selectionner">
+                      
+    <jsp:useBean id="test" class="fr.eni_ecole.qcm.model.Test" scope="session" />
+    <p>
+       <jsp:getProperty property="nom" name="test"/>  
+    </p>
+                            
+</div>

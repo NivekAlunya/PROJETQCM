@@ -48,7 +48,6 @@ h4,.Nom_utilisateur, .Chronometre
     color:#6C6599;                    /*bleu/violet*/
     font-size: 20px;
     font-family: "calibri";
-    margin-left: 20px;
 }
 
 
@@ -73,7 +72,7 @@ p
     color:#6C6599;                    /*bleu/violet*/
     font-size: 20px;
     font-family: "calibri";
-    margin-left: 80px;
+    /*margin-left: 80px;*/
     vertical-align:bottom;
     margin-top: auto;
     margin-bottom: auto; 
@@ -177,8 +176,6 @@ body
     margin-bottom: 50px;
     padding:4px;
     box-shadow:4px 4px 6px #272727;
-    position:absolute;
-    bottom:0; 
 }
 
 
@@ -208,8 +205,8 @@ body
 {
     background-color: #FFFFFF;  
     border: 2px solid #328396;
-    margin-right : 325px;
-    margin-left : 325px;
+    margin-right : 300px;
+    margin-left : 300px;
     margin-top: 50px;
     margin-bottom: 50px;
     box-shadow:4px 4px 6px #272727;   
@@ -321,7 +318,7 @@ body
     text-align : center;
     padding-right:10px;
     padding-left:10px;
-    margin:4%;
+    margin:3%;
     border-bottom:2px solid #565656;
     border-right:2px solid #565656;
     border-top:2px solid #C1BFC3;
@@ -517,7 +514,7 @@ body
 .barre_menu
 {
     margin-top:50px;
-    width: 800px;
+    width: 650px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -538,9 +535,9 @@ body
 
 .displayed 
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto 
+    display: block; 
+    margin-right: 30px;
+    margin-bottom: 30px;
 }
 
 
