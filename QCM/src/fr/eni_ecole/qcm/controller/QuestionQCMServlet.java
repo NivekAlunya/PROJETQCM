@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import fr.eni_ecole.qcm.store.*;
 import fr.eni_ecole.qcm.model.*;
 
+
 /**
  * Servlet implementation class QuestionQCMServlet
  */
@@ -94,16 +95,40 @@ public class QuestionQCMServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		if (request.getParameter("numero") != null && request.getParameter("reponse") != null) {
+			Integer reponse,index;
 			try {
-				Integer index = Integer.valueOf(request.getParameter("numero"))-1; 
-				Integer reponse = Integer.valueOf(request.getParameter("reponse"));
-				ArrayList<QuestionQCM> questions = (ArrayList<QuestionQCM>)request.getSession().getAttribute("questions");
-				QuestionQCM question = questions.get(index);
-				for(ReponseQCM rq : question.getReponsesQCM()) {
-					
-				}
+				index = Integer.valueOf(request.getParameter("numero"))-1;
+				reponse = Integer.valueOf(request.getParameter("reponse"));
 			} catch (Exception e) {
 				// TODO: handle exception
+				e.printStackTrace();
+				response.setStatus(412);
+				gotoQuestion(request,response);
+				return;
+			}
+			ArrayList<QuestionQCM> questions = (ArrayList<QuestionQCM>)request.getSession().getAttribute("questions");
+			QuestionQCM question = questions.get(index);
+			for(ReponseQCM rq : question.getReponsesQCM()) {
+				if (rq.getReponse().getIdReponse() == reponse) {
+					if(rq.getCochee() != 'O') {
+						rq.setCochee('O');
+						ReponseQCMStore.modifier(rq);
+					}
+				} else {
+					if(rq.getCochee() != 'N') {
+						rq.setCochee('N');
+						ReponseQCMStore.modifier(rq);
+					}
+				}
+			}
+			if (request.getParameter("marquee") != null) {
+				if (question.getMarque() != "O") {
+					question.setMarque("O");
+					QuestionQCMStore.modifier(question);
+				}
+			} else if (question.getMarque() == "O") {
+				question.setMarque("N");
+				QuestionQCMStore.modifier(question);
 			}
 		}
 		gotoQuestion(request,response);

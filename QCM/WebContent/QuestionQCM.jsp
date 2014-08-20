@@ -26,7 +26,7 @@ Integer count = questionsqcm.size();
                 <!-- include info candidat -->
             </div>
             <div class="Test_Selectionner">
-                <!-- include titre du test en cours -->
+                <%=questionqcm.getInscription().getTest().getNom()%>
             </div>
             <div class="Chronometre">
                 <!-- include chronometre -->
@@ -34,10 +34,10 @@ Integer count = questionsqcm.size();
         </div>
         <div class="barre_Recap_Question">
             <div class="Numero_question">
-                <%=numero%> / <%=count %>
+                <%=numero%> / <%=count %> - <%=questionqcm.getQuestion().getTheme().getNom()%>
             </div>
         </div>      
-        <h5> <%=questionqcm.getQuestion().getEnonce()%> </h5><br />
+        <h5><%=questionqcm.getQuestion().getEnonce()%></h5><br />
         <section>
             <form action="<%=request.getContextPath()%>/QuestionQCM" method="post" enctype="application/x-www-form-urlencoded">
             <% for (ReponseQCM r : questionqcm.getReponsesQCM()) { %>
@@ -53,24 +53,25 @@ Integer count = questionsqcm.size();
             <% } %>
             <fieldset>
                 <div class="Checkbox">
-                    <input type="checkbox" value="O" name="marquee" />
+                    <%String marquee = questionqcm.getMarque().equals("O") ? " checked=\"checked\"" : ""; %>                
+                    <input type="checkbox" value="O" name="marquee"<%=marquee%> />
                     <label for="Checkbox">marquer cette question</label>          
                 </div>
                 <input type="submit" value="Valider" />
+                <input type="submit" value="Avancement" />
                 <input type="hidden" value="<%=numero%>" name="numero" />            
             </fieldset>
             </form>
         </section>
-        
         <div class="barre_Navigation" align="center">
             <div align="center"  class="Barre_Fleche">
-                <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero-1 < 1 ? count : numero -1 )%>"> Précédent </a> <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero + 1 > count ? 1 : numero + 1 )%>"> Suivant </a>
+                <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero-1 < 1 ? count : numero -1 )%>"> Précédent </a> - <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero + 1 > count ? 1 : numero + 1 )%>"> Suivant </a>
                 <!--a href="static/ConfirmationRecapitulatif.html" id="Barre_Recapitulatif" class="Bouton_Recapitulatif" >Récapitulatif</a-->                                       
             </div>              
         </div> 
    </div>
    <div class="Pied_Page">
-        <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
+        <div class="cadre"><img  width=100%  src="<%=request.getContextPath()%>/image/pieddepageENI.png" ></div>
    </div>  
 </div>
 </body>

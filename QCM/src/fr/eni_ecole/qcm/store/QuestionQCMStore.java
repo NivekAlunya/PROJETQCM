@@ -25,7 +25,6 @@ public class QuestionQCMStore {
 		Connection cn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		System.out.println(query);
 		int lastIdquestion = 0;
 		ArrayList<QuestionQCM> list = new ArrayList<QuestionQCM>();
 		QuestionQCM questionqcm = null;
@@ -177,6 +176,7 @@ public class QuestionQCMStore {
 			cs.setString(2, qcm.getMarque());
 			cs.setInt(3, qcm.getInscription().getIdInscription());
 			cs.setInt(4, qcm.getQuestion().getIdQuestion());
+			System.out.println(qcm.getIdQuestionQCM() + ":" + qcm.getMarque());
 			cs.execute();
 			
 		} catch (Exception e) {

@@ -9,17 +9,17 @@ public class ReponseQCM implements Serializable{
 	 */
 	private char cochee ;
 	private Reponse reponse;
-	private QuestionQCM generationQCM;
+	private QuestionQCM questionQCM;
 
 	public ReponseQCM (){
 		this('-',null,null);
 	}
 
-	public ReponseQCM(char cochee, Reponse reponse, QuestionQCM generationQCM) {
+	public ReponseQCM(char cochee, Reponse reponse, QuestionQCM questionQCM) {
 		super();
 		this.cochee = cochee;
 		this.reponse = reponse;
-		this.generationQCM = generationQCM;
+		this.questionQCM = questionQCM;
 	}
 
 	public void setCochee(char cochee) {
@@ -35,12 +35,12 @@ public class ReponseQCM implements Serializable{
 	}
 
 
-	public QuestionQCM getGenerationQCM() {
-		return generationQCM;
+	public QuestionQCM getQuestionQCM() {
+		return questionQCM;
 	}
 
-	public void setGenerationQCM(QuestionQCM generationQCM) {
-		this.generationQCM = generationQCM;
+	public void setGenerationQCM(QuestionQCM questionQCM) {
+		this.questionQCM = questionQCM;
 	}
 
 	public char getCochee() {

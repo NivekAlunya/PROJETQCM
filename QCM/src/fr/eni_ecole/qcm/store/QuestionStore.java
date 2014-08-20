@@ -103,9 +103,9 @@ public class QuestionStore {
 					rs.getInt("idQuestion"),
 					rs.getString("Enonce"),
 					rs.getString("URLimage"),
-					new Theme(rs.getInt("idtheme"), rs.getString("nom"))
+					new Theme(rs.getInt("idtheme"), rs.getString("nom")),
+					null
 				);
-				
 				listeQuestion.add(question);				
 			}
 			
@@ -133,10 +133,12 @@ public class QuestionStore {
 			rqt.setInt(1, idQuestion);
 			rs=rqt.executeQuery();
 			if (rs.next()){
-				return  new Question(rs.getInt("idQuestion"), 
-						rs.getString("Enonce"),
-						rs.getString("urlimage"),
-						new Theme(rs.getInt("idTheme"),rs.getString("nom")));
+				return new Question(rs.getInt("idQuestion"), 
+					rs.getString("Enonce"),
+					rs.getString("urlimage"),
+					new Theme(rs.getInt("idTheme"),rs.getString("nom")),
+					null
+				);
 			}
 		}
 		catch (Exception e){
