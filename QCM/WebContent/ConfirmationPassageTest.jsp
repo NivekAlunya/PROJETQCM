@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -14,7 +14,7 @@
                 <h3> Confirmation </h3>
                 <div class="Barre_Confirmation"> 
                     <img class="displayed" width=10%  alt="" src="image/attention.jpg" align=left  >
-                    <p>Vous etes sur le point de commencer le test </p> <br />
+                    <p>Vous êtes sur le point de commencer le test </p> <br />
                 <div><%@ include file="/IdentiteTest.jspf" %></div><br />                        
                 </div>
                 <div class="barre_boutons_OuiNon"> 

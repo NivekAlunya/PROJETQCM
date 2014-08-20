@@ -131,6 +131,16 @@ fieldset ul
 }
 
 
+.text_souligne
+{
+	margin-top : 10px;
+    text-decoration: underline;
+    color:#6C6599; 
+    font-size: 20px;
+    font-family: "calibri";
+}
+
+
 /*------Fond---------------------------------------------------------------------------*/
 
 
@@ -309,7 +319,7 @@ body
 
 
 .Bouton_Accueil,.Bouton_Question,.Bouton_Theme,.Bouton_Test,.Bouton_Inscription,
-.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif,.Bouton_Cloturer
+.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif,.Bouton_Cloturer,.Bouton_Avancement
 {
     background-color:#6C6599;
     color:#FFFFFF; 
@@ -360,8 +370,8 @@ body
 
 
 .Checkbox {
-    /*float: right;*/
-    margin-left: 500px;
+    float: right;
+
     /*width: 11px;
     height: 11px;
     background: #6C6599;
@@ -406,21 +416,23 @@ body
 }*/
 
 
-/*.Radio_Bouton 
+.Radio_Bouton 
 {
     float:left;
-    width: 15px;
+    width: 20px;
+    float: left;   
+    /*width: 15px;
     height: 15px;
     position: relative;
-    /*background: #6C6599;*/
-    /*-webkit-border-radius: 50px;
+    /*background: #6C6599;
+    -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    border-radius: 50px;*/
-    /*webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    border-radius: 50px;
+    webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
     -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);*/
 }
-.round {
+/*.round {
 	width: 6px;
     height: 6px;
     padding: 3px;
@@ -562,7 +574,6 @@ body
 .Barre_Fleche
 {
     float:none;
-    padding-left: 150px;
 }
 
 
@@ -582,6 +593,7 @@ fieldset,nav
 {
 	border: 2px solid #328396;
 	padding: 5px;
+	margin-bottom:2px;
 }
 
 .Barre_Date_Debut
@@ -596,6 +608,19 @@ fieldset,nav
 	width:200px;
 }
 
+.barre_Bouton_Test
+{
+	margin-bottom: -15px;
+    margin-top: -30px;
+    margin-left: 15px;
+}
+
+
+.barre_marquage_Question
+{
+	margin-top: 15px;
+    margin-right: 45px;
+}
 
 form.connexion, .bloc_identifiant,.bloc_motdepasse
 {

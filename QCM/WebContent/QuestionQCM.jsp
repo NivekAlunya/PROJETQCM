@@ -51,21 +51,25 @@ Integer count = questionsqcm.size();
                 <label for="reponse:<%=r.getReponse().getIdReponse()%>"><%=r.getReponse().getProposition()%></label>
              </fieldset>
             <% } %>
-            <fieldset>
+            <fieldset> 
+                <div class="barre_marquage_Question">       
                 <div class="Checkbox">
                     <%String marquee = questionqcm.getMarque().equals("O") ? " checked=\"checked\"" : ""; %>                
                     <input type="checkbox" value="O" name="marquee"<%=marquee%> />
                     <label for="Checkbox">marquer cette question</label>          
                 </div>
-                <input type="submit" value="Valider" />
-                <input type="submit" value="Avancement" />
-                <input type="hidden" value="<%=numero%>" name="numero" />            
+                </div> 
+                <div class="barre_Bouton_Test">
+                <input class="Bouton_Valider" type="submit" value="Valider" />
+                <input class="Bouton_Avancement" type="submit" value="Avancement" />
+                <input type="hidden" value="<%=numero%>" name="numero" />
+                </div>            
             </fieldset>
             </form>
         </section>
         <div class="barre_Navigation" align="center">
             <div align="center"  class="Barre_Fleche">
-                <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero-1 < 1 ? count : numero -1 )%>"> Précédent </a> - <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero + 1 > count ? 1 : numero + 1 )%>"> Suivant </a>
+                <div class="text_souligne"><a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero-1 < 1 ? count : numero -1 )%>"> Précédent </a> - <a href="<%=request.getContextPath()%>/QuestionQCM?pnumero=<%=(numero + 1 > count ? 1 : numero + 1 )%>"> Suivant </a></div>
                 <!--a href="static/ConfirmationRecapitulatif.html" id="Barre_Recapitulatif" class="Bouton_Recapitulatif" >Récapitulatif</a-->                                       
             </div>              
         </div> 

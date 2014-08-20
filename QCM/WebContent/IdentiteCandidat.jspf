@@ -1,9 +1,10 @@
+<%@ page import="fr.eni_ecole.qcm.model.*,java.util.*" %>
+<%Promotion promotion = ((Candidat)request.getSession().getAttribute("candidat")).getPromo();%>
 <div class="Nom_utilisateur">
                  <!-- include info candidat -->        
     <jsp:useBean id="candidat" class="fr.eni_ecole.qcm.model.Candidat" scope="session" />
     <p>
-       <jsp:getProperty property="prenom" name="candidat"/> <jsp:getProperty property="nom" name="candidat"/> - <jsp:getProperty property="promo" name="candidat"/> 
-    </p>
-             
-                   
+       <jsp:getProperty property="prenom" name="candidat"/> <jsp:getProperty property="nom" name="candidat"/> - <%=promotion.getLibelle()%> 
+   
+    </p>                           
 </div>
