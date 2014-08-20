@@ -81,7 +81,9 @@ public class AuthentificationServlet extends HttpServlet {
 					
 	    			request.getSession().setAttribute("candidat", candidat);
 	    			// OK rediriger vers le menu accueil administration
+
 	    			RequestDispatcher dispatcher = contexte.getRequestDispatcher("/CandidatInscriptions");
+
 	    			dispatcher.forward(request, response);
 	    		}
 	    		else 
