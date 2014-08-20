@@ -19,39 +19,52 @@ public class TestStore {
 	 * @return La liste peut être vide mais jamais <code>null</code>
 	 * @throws Exception 
 	 */
-	public static ArrayList<Test> listeTest() throws Exception
+	public static ArrayList<Test> listeTest()
 	{
 		
 		ArrayList<Test>listeT=new ArrayList<Test>();
 		Connection cnx = null;
-		cnx = PoolConnexion.getConnection();
-		
-		Statement stm = cnx.createStatement();
-		ResultSet rs = stm.executeQuery("select * from Tests");
-		
-		while(rs.next())
-		{
-			Test test = new Test();
-			test.setIdTest(rs.getInt("idTest"));
-			test.setDuree(rs.getInt("duree"));
-			test.setNom(rs.getString("nom"));
-			test.setSeuilAcquis(rs.getInt("seuilAcquis"));
-			test.setSeuilEnCours(rs.getInt("seuilEnCours"));
-			listeT.add(test);
+		Statement stm = null;
+		ResultSet rs = null;
+		try {
+			cnx = PoolConnexion.getConnection();
+			stm = cnx.createStatement();
+			rs = stm.executeQuery("select * from Tests");
+			
+			while(rs.next())
+			{
+				Test test = new Test();
+				test.setIdTest(rs.getInt("idTest"));
+				test.setDuree(rs.getInt("duree"));
+				test.setNom(rs.getString("nom"));
+				test.setSeuilAcquis(rs.getInt("seuilAcquis"));
+				test.setSeuilEnCours(rs.getInt("seuilEnCours"));
+				listeT.add(test);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs!=null) rs.close();
+				if (stm!=null) stm.close();
+				if (cnx!=null && !cnx.isClosed()) cnx.close();
+			}
+		    catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}
-		
-		
 		return listeT;
 	}
 	
 	// Rechercher un test
 	
-	public static Test rechercherTest(Integer idTest ) throws Exception{
+	public static Test rechercherTest(Integer idTest ){
 		Connection cnx=null;
 		PreparedStatement rqt=null;
 		ResultSet rs=null;
 		try{
-//			
 			cnx = PoolConnexion.getConnection();
 		    rqt=cnx.prepareStatement("select * from tests where idTest = ?");
 			rqt.setInt(1, idTest);
@@ -61,22 +74,22 @@ public class TestStore {
 				return new Test (rs.getInt("idTest"),rs.getInt("duree"),
 				rs.getString("nom"),rs.getInt("seuilAcquis"),rs.getInt("seuilEnCours"),rs.getInt("nbSection"));
 			}
-			else
-			{
-			return null;
-			}
 		}
 	    catch (Exception e)
 	    {
-		// TODO: handle exception
-		e.printStackTrace();
+	    	// TODO: handle exception
+	    	e.printStackTrace();
 	    }
 	    finally
 	    {
-	    	
-		    if (rs!=null) rs.close();
-		    if (rqt!=null) rqt.close();
-		    if (cnx!=null) cnx.close();
+	    	try {
+			    if (rs!=null) rs.close();
+			    if (rqt!=null) rqt.close();
+			    if (cnx!=null) cnx.close();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 	    }
 		
 		return null;

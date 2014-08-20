@@ -139,7 +139,7 @@ public class CandidatStore {
 				promotion);					
 	}
 
-	public static Candidat rechercher(int idCandidat) throws Exception{
+	public static Candidat rechercher(int idCandidat){
 		Connection cnx=null;
 		PreparedStatement rqt=null;
 		ResultSet rs=null;
@@ -156,9 +156,14 @@ public class CandidatStore {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			if (rs!=null) rs.close();
-			if (rqt!=null) rqt.close();
-			if (cnx!=null) cnx.close();
+			try {
+				if (rs!=null) rs.close();
+				if (rqt!=null) rqt.close();
+				if (cnx!=null) cnx.close();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
 		}
 		
 		return candidat;
