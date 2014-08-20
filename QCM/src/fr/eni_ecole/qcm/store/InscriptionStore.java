@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import fr.eni_ecole.qcm.model.Candidat;
 import fr.eni_ecole.qcm.model.Inscription;
@@ -160,5 +161,54 @@ public class InscriptionStore {
 			}
 		}
 		return null;
-	}	
+	}
+	
+	public static ArrayList<Inscription> rechercherInscription(int idCandidat) {
+		String query = " select c.idCandidat,c.Nom,c.Prenom,c.login,c.codePromotion,c.motdepasse, " +
+				" i.idInscription,i.typeinscription,i.rapport,i.dateDebut,i.dateFin,i.Email,i.tempsEcoule, " +
+				" t.idTest,t.nom as NomTest,t.seuilAcquis,t.seuilEnCours,t.nbSection " +
+				" FROM Candidats c " +
+				" INNER JOIN Inscriptions i ON c.idCandidat = i.idCandidat " +
+				" INNER JOIN Tests t ON i.idTest=t.idtest " +
+				" WHERE i.idCandidat= ? ";
+		System.out.println(query);
+		Connection cnx=null;
+		PreparedStatement rqt=null;
+		ResultSet rs=null;
+		ArrayList<Inscription> listeInscription=new ArrayList<Inscription>();
+		try {
+			cnx=PoolConnexion.getConnection();
+			rqt=cnx.prepareStatement(query);
+			rqt.setInt(1, idCandidat);
+			rs=rqt.executeQuery();
+			Promotion promotion = null;
+			Candidat candidat = null;
+			Inscription inscription=null;
+			Test test = null;
+			
+			while (rs.next()){
+								
+				inscription = new Inscription(rs.getInt("idInscription"),
+						(new Candidat(rs.getInt("idCandidat"), rs.getString("Nom"), rs.getString("Prenom"), rs.getString("login"), rs.getString("MotDePasse"),
+						 null)),
+						 new Test(rs.getInt("idTest"),0, rs.getString("NomTest"), 
+						 rs.getInt("seuilAcquis"), rs.getInt("seuilEnCours"), rs.getInt("nbSection")),
+						 rs.getString("typeInscription"),rs.getString("rapport"),rs.getDate("dateDebut"),rs.getDate("dateFin"),
+						 rs.getString("email"),rs.getInt("tempsEcoule"));
+				listeInscription.add(inscription);
+			}
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if (rs!=null) rs.close();
+				if (rqt!=null) rqt.close();
+				if (cnx!=null) cnx.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return  listeInscription;
+	}		
 }
