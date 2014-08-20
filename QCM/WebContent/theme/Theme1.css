@@ -84,7 +84,7 @@ p
     color:#328396;   /*vert*/                   
     font-size: 20px;
     font-family: "calibri";
-    margin-left: 20px;
+    width: 300px;
 }
 
 
@@ -620,6 +620,12 @@ fieldset,nav
 {
 	margin-top: 15px;
     margin-right: 45px;
+}
+
+
+.Barre_utilisateur
+{
+	float:left;
 }
 
 form.connexion, .bloc_identifiant,.bloc_motdepasse

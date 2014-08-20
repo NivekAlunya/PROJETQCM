@@ -22,10 +22,10 @@ Integer count = questionsqcm.size();
     </div>
     <div class="fond_selection">
         <div class="barre_session" align="center"> 
-            <div class="Nom_utilisateur">
-                <!-- include info candidat -->
+            <div class="Barre_utilisateur">
+                <%@ include file="/IdentiteCandidat.jspf" %>
             </div>
-            <div class="Test_Selectionner">
+            <div align="center" class="Test_Selectionner">
                 <%=questionqcm.getInscription().getTest().getNom()%>
             </div>
             <div class="Chronometre">
