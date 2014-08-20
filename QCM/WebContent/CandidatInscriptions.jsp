@@ -1,3 +1,4 @@
+<%@page import="fr.eni_ecole.qcm.model.Inscription"%>
 <%@page import="fr.eni_ecole.qcm.model.Test"%>
 <%@ page  import ="fr.eni_ecole.qcm.*, java.util.*, java.text.*" %>
 <%@ page language="java"
@@ -5,7 +6,7 @@
          pageEncoding="ISO-8859-1"
          import ="fr.eni_ecole.qcm.*, java.util.*"
 %>
-<% ArrayList<Test> tests = (ArrayList<Test>)request.getAttribute("tests");%>
+<% ArrayList<Inscription> inscriptions = (ArrayList<Inscription>)request.getAttribute("inscriptions");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +27,8 @@
             </div>
             <h2>Sélectionnez le test que vous souhaitez passer :</h2>
             <ul>
-            <% for (Test test : tests) {%>
-               <li><a href ="ConfirmationPassageTest.jsp"><%=test.getNom()%></a></li>
+            <% for (Inscription i : inscriptions) {%>
+               <li><a href ="/PassageTest.jsp"><%=i.getTest().getNom()%></a></li>
             <%}%>   
             </ul>
     </div>
