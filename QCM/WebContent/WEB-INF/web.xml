@@ -50,20 +50,16 @@
     <servlet-name>AuthentificationView</servlet-name>
     <url-pattern>/AdministrateurConnection</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>CandidatInscriptionsServlet</display-name>
     <servlet-name>CandidatInscriptionsServlet</servlet-name>
     <servlet-class>fr.eni_ecole.qcm.controller.CandidatInscriptionsServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>CandidatInscriptionsServlet</servlet-name>
     <url-pattern>/CandidatInscriptions</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <display-name>SigninView</display-name>
     <servlet-name>SigninView</servlet-name>
@@ -96,5 +92,15 @@
   <servlet-mapping>
     <servlet-name>QuestionQCMServlet</servlet-name>
     <url-pattern>/QuestionQCM</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InscriptionServlet</display-name>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.InscriptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <url-pattern>/Inscription</url-pattern>
   </servlet-mapping>
 </web-app>
