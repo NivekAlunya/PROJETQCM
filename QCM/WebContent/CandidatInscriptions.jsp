@@ -28,7 +28,7 @@
             <h2>Sélectionnez le test que vous souhaitez passer :</h2>
             <ul>
             <% for (Inscription i : inscriptions) {%>
-               <li><a href ="/PassageTest.jsp"><%=i.getTest().getNom()%></a></li>
+               <li><a href ="<%=request.getContextPath()%>/QuestionQCM?inscription=<%=i.getIdInscription()%>"><%=i.getTest().getNom()%></a></li>
             <%}%>   
             </ul>
     </div>
