@@ -28,7 +28,11 @@
             <h2>Sélectionnez le test que vous souhaitez passer :</h2>
             <ul>
             <% for (Inscription i : inscriptions) {%>
+
                <li><a onclick="valider('<%=request.getContextPath()%>/QuestionQCM?inscription=<%=i.getIdInscription()%>')" href ="#"><%=i.getTest().getNom()%></a></li>
+
+               <li><a href="/QCM/QuestionQCM.jsp"><%=i.getTest().getNom()%></a></li>
+
             <%}%>   
             </ul>
     </div>

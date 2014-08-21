@@ -4,8 +4,6 @@ package fr.eni_ecole.qcm.controller;
 
 import java.io.IOException;
 
-
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 

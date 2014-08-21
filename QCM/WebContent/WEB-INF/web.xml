@@ -102,5 +102,28 @@
   <servlet-mapping>
     <servlet-name>ResultatServlet</servlet-name>
     <url-pattern>/Resultat</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <description></description>
+    <display-name>InscriptionServlet</display-name>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.InscriptionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscriptionServlet</servlet-name>
+    <url-pattern>/Inscription</url-pattern>
+  </servlet-mapping> 
+
+  <servlet>
+    <description></description>
+    <display-name>RecapitulatifServlet</display-name>
+    <servlet-name>RecapitulatifServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.RecapitulatifServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RecapitulatifServlet</servlet-name>
+    <url-pattern>/Recapitulatif</url-pattern>
   </servlet-mapping>
+    
+  
 </web-app>
