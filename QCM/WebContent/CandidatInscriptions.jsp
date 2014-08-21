@@ -28,11 +28,35 @@
             <h2>Sélectionnez le test que vous souhaitez passer :</h2>
             <ul>
             <% for (Inscription i : inscriptions) {%>
-               <li><a href ="<%=request.getContextPath()%>/QuestionQCM?inscription=<%=i.getIdInscription()%>"><%=i.getTest().getNom()%></a></li>
+               <li><a onclick="valider('<%=request.getContextPath()%>/QuestionQCM?inscription=<%=i.getIdInscription()%>')" href ="#"><%=i.getTest().getNom()%></a></li>
             <%}%>   
             </ul>
     </div>
     <%@ include file="/piedDePage.jspf" %>
+    
+    <div style="visible:false" id="confirmation" class="fond_confirmation"> 
+        <h3> Confirmation </h3>
+        <div class="Barre_Confirmation"> 
+            <img class="displayed" width=10%  alt="" src="image/attention.jpg" align="left" />
+            <p>Vous êtes sur le point de commencer le test </p>
+            <div><%@ include file="/IdentiteTest.jspf" %></div>                        
+        </div>
+        <div class="barre_boutons_OuiNon"> 
+            <a id="confirmer" href="#" class="Bouton_Oui" >Oui</a>
+            <a onclick="fermer()" href="#" class="Bouton_Non" >Non</a>
+        </div> 
+    </div>
+    
+    
 </div>
 </body>
+<script type="text/javascript">
+function valider(link) {
+	document.getElementById("confirmer").setAttribute("href",link);
+	document.getElementById("confirmation").setAttribute("style","visible:true;position:absolute;left:5%;top:20%;");
+}
+function fermer() {
+    document.getElementById("confirmation").setAttribute("style","visible:false;");
+}
+</script>
 </html>
