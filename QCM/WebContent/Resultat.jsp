@@ -40,7 +40,7 @@ Inscription insc = (Inscription)request.getSession().getAttribute("inscription")
             <!--p>Un mail a été envoyé au responsable de formation avec ce résultat</p-->
         </div>
         <div class="Pied_Page">
-            <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
+            <div class="cadre"><img  width=100%  src="/image/pieddepageENI.png" ></div>
         </div>
     </div>
 </body>

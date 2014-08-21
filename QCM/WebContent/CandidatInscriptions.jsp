@@ -34,7 +34,7 @@
     </div>
     <%@ include file="/piedDePage.jspf" %>
     
-    <div style="visible:false" id="confirmation" class="fond_confirmation"> 
+    <div id="confirmation" class="fond_confirmation overlay_hidden"> 
         <h3> Confirmation </h3>
         <div class="Barre_Confirmation"> 
             <img class="displayed" width=10%  alt="" src="image/attention.jpg" align="left" />
@@ -53,10 +53,11 @@
 <script type="text/javascript">
 function valider(link) {
 	document.getElementById("confirmer").setAttribute("href",link);
-	document.getElementById("confirmation").setAttribute("style","visible:true;position:absolute;left:5%;top:20%;");
+	document.getElementById("confirmation").setAttribute("class","fond_confirmation overlay_shown");
 }
+
 function fermer() {
-    document.getElementById("confirmation").setAttribute("style","visible:false;");
+    document.getElementById("confirmation").setAttribute("class","fond_confirmation overlay_hidden");
 }
 </script>
 </html>
