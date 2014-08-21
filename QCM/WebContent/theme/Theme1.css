@@ -607,6 +607,40 @@ fieldset,nav
 	float:left;
 }
 
+.Barre_titre
+{
+	margin-right: 50px;
+}
+
+
+.Barre_Affichage_Resultat
+{
+	margin-left:50px;
+	margin-right:50px;
+}
+
+.Barre_Section
+{
+	float:left;
+	width:300px;
+}
+
+.Cellule_Section
+{
+	width: 300px;
+}
+
+.Cellule_Resultat
+{
+	width: 100px;
+}
+
+.Barre_Mail
+{
+    margin-Top :20px;
+    margin-bottom :20px;
+}
+
 form.connexion, .bloc_identifiant,.bloc_motdepasse
 {
     display: block;
@@ -643,8 +677,6 @@ form.connexion, .bloc_identifiant,.bloc_motdepasse
 }
 
 
-
-
 #listeTest
 {
 	float:right;
@@ -663,8 +695,18 @@ form.connexion, .bloc_identifiant,.bloc_motdepasse
     width:100px;
 }
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width:390px;
+.overlay_hidden
+{
+	visibility:hidden;
 }
+
+
+.overlay_shown
+{
+	visibility: visible;
+	position: absolute;
+}
+
+
+
+

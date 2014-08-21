@@ -16,7 +16,7 @@ Inscription insc = (Inscription)request.getSession().getAttribute("inscription")
 <title>QCM ENI - Résultat</title>
 <link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
 </head>
-<body style="width:100%;">
+<body>
     <div id="page">
         <div class="header" >
             <div class="cadre"><h1>Résultats</h1></div>
@@ -30,18 +30,29 @@ Inscription insc = (Inscription)request.getSession().getAttribute("inscription")
 	                <%=insc.getTest().getNom()%>
 	            </div>
             </div>
-            <a>Résultats: </a> </br>
-            <ul> 
+            
+            
+            <div class="Barre_Affichage_Resultat">
+            <table>
+            <tr> 
+                <td></td><td><div align="right"  class="Barre_titre"><h5>Résultats: </h5></div></td>
+            </tr>
             <% for (int i =1 ; i<count ; ++i) { %>
-                <li><p><%=sections.get(i) %> : <%=resultat.get(i)%>/<%=nombreQuestion.get(i)%></p></li>
+            <tr>
+                <td class="Cellule_Section"><%=sections.get(i) %></td><td align="center" class="Cellule_Resultat"><%=resultat.get(i)%>/<%=nombreQuestion.get(i)%></td>
+            </tr>
             <% } %>
-                <li><p><%=sections.get(0) %> : <%=resultat.get(0)%>/<%=nombreQuestion.get(0)%></p></li>
-            </ul>
-            <!--p>Un mail a été envoyé au responsable de formation avec ce résultat</p-->
+            <tr>
+                <td class="Cellule_Section"><%=sections.get(0) %></td><td align="center" class="Cellule_Resultat"><%=resultat.get(0)%>/<%=nombreQuestion.get(0)%></td>
+            </tr>
+            </table>           
+            </div>
+            
+           <div class="Barre_Mail"> <p>Un mail a été envoyé au responsable de formation avec ce résultat</p></div>
+           <div align="center"><a href="<%=request.getContextPath()%>/CandidatInscriptions" class="text_souligne">Fin du test</a></div>
         </div>
-        <div class="Pied_Page">
-            <div class="cadre"><img  width=100%  src="/image/pieddepageENI.png" ></div>
-        </div>
-    </div>
+        
+        <%@ include file="/piedDePage.jspf" %>
+    </div>   
 </body>
 </html>

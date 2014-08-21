@@ -61,7 +61,7 @@ Integer count = questionsqcm.size();
                 </div> 
                 <div class="barre_Bouton_Test">
                 <input class="Bouton_Valider" type="submit" value="Valider" />
-                <a href="/Recapitulatif" class="text_souligne">Avancement</a>
+                <a href="<%=request.getContextPath()%>/Recapitulatif" class="text_souligne">Avancement</a>
                 <!--input class="Bouton_Avancement" type="submit" value="Avancement" /-->
                 <input type="hidden" value="<%=numero%>" name="numero" />
                 </div>            
