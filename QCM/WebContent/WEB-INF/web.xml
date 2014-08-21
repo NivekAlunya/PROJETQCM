@@ -101,6 +101,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ResultatServlet</servlet-name>
-    <url-pattern>/ResultatServlet</url-pattern>
+    <url-pattern>/Resultat</url-pattern>
   </servlet-mapping>
 </web-app>
