@@ -21,6 +21,7 @@ public class QuestionQCMStore {
 			" inner join reponses r on q.idquestion = r.idquestion " +  
 			" inner join reponseQCMs rq on r.idreponse = rq.idreponse and g.idQuestionQCM = rq.idQuestionQCM " +  
  			" where g.idinscription = ? ";
+		//@totdo mettre une clause order 
 		boolean loop = true;
 		Connection cn = null;
 		PreparedStatement ps = null;

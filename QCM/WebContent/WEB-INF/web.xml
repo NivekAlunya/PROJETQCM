@@ -95,12 +95,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>InscriptionServlet</display-name>
-    <servlet-name>InscriptionServlet</servlet-name>
-    <servlet-class>fr.eni_ecole.qcm.controller.InscriptionServlet</servlet-class>
+    <display-name>ResultatServlet</display-name>
+    <servlet-name>ResultatServlet</servlet-name>
+    <servlet-class>fr.eni_ecole.qcm.controller.ResultatServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>InscriptionServlet</servlet-name>
-    <url-pattern>/Inscription</url-pattern>
+    <servlet-name>ResultatServlet</servlet-name>
+    <url-pattern>/ResultatServlet</url-pattern>
   </servlet-mapping>
 </web-app>

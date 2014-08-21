@@ -21,7 +21,7 @@ Integer count = questionsqcm.size();
         <div class="cadre"><h1>Passage d'un test</h1></div>
     </div>
     <div class="fond_selection">
-        <div class="barre_session" align="center"> 
+        <div class="barre_session" align="center">
             <div class="Barre_utilisateur">
                 <%@ include file="/IdentiteCandidat.jspf" %>
             </div>
