@@ -127,9 +127,18 @@ form.connexion label
 
 fieldset ul
 {
-	color:red;
+	margin-top : 10px;
+    text-decoration: underline;
+    color:#6C6599; 
+    font-size: 20px;
+    font-family: "calibri";
+    list-style: none;
 }
 
+fieldset ul label
+{
+    margin-left : 20px; 
+}
 
 .text_souligne
 {
@@ -207,7 +216,9 @@ body
     margin-top: 50px;
     margin-bottom: 50px;
     padding : 50px;
-    box-shadow:4px 4px 6px #272727;   
+    box-shadow:4px 4px 6px #272727;
+    border-top-color: #B84D61;
+    border-top-style: solid;
 }
 
 
@@ -276,16 +287,8 @@ body
 }
 
 
-.Bouton_Valider:active 
-{
-    background-color: #1D4E55;
-}
-
-
-.Bouton_Oui:active 
-{
-    background-color: #1D4E55;
-}
+.Bouton_Valider:active {background-color: #1D4E55;}
+.Bouton_Oui:active {background-color: #1D4E55;}
 
 
 .Bouton_Annuler,.Bouton_Non
@@ -306,20 +309,15 @@ body
 }
 
 
-.Bouton_Annuler:active 
-{
-    background-color: #E89C2E;
-}
+.Bouton_Annuler:active {background-color: #E89C2E;}
 
 
-.Bouton_Non:active 
-{
-    background-color: #E89C2E;
-}
+.Bouton_Non:active {background-color: #E89C2E;}
 
 
 .Bouton_Accueil,.Bouton_Question,.Bouton_Theme,.Bouton_Test,.Bouton_Inscription,
-.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif,.Bouton_Cloturer,.Bouton_Avancement
+.Bouton_Suivant,.Bouton_Precedent,.Bouton_Recapitulatif,.Bouton_Cloturer,.Bouton_Avancement,
+.Bouton_Envoyer
 {
     background-color:#6C6599;
     color:#FFFFFF; 
@@ -337,36 +335,17 @@ body
 }
 
 
-.Bouton_Accueil:active 
-{
-    background-color: #484467;
-}
-
-
-.Bouton_Question:active 
-{
-    background-color: #484467;
-}
-
-
-.Bouton_Theme:active 
-{
-    background-color: #484467;
-}
-
-
-.Bouton_Test:active 
-{
-    background-color: #484467;
-}
-
-
-.Bouton_Inscription:active 
-{
-    background-color: #484467;
-}
-
-
+.Bouton_Accueil:active {background-color: #484467;}
+.Bouton_Question:active {background-color: #484467;}
+.Bouton_Theme:active {background-color: #484467;}
+.Bouton_Test:active {background-color: #484467;}
+.Bouton_Inscription:active {background-color: #484467;}
+.Bouton_Suivant:active {background-color: #484467;}
+.Bouton_Precedent:active {background-color: #484467;}
+.Bouton_Recapitulatif:active {background-color: #484467;}
+.Bouton_Cloturer:active {background-color: #484467;}
+.Bouton_Avancement:active {background-color: #484467;}
+.Bouton_Envoyer:active {background-color: #484467;}
 
 
 .Checkbox {
@@ -635,6 +614,14 @@ form.connexion, .bloc_identifiant,.bloc_motdepasse
     margin-right: auto;
     width:390px;
 }
+
+.Barre_Retour_Accueil
+{
+	width: 150px;
+    float: right;
+    margin-top: 28px;
+}
+
 
 /*------Zone de saisie---------------------------------------------------------------------------*/
 

@@ -21,7 +21,7 @@
                 <a href="static/AccesQuestion" type="submit" class="Bouton_Question" >Question</a>
                 <a href="AdministrationTheme.jsp" type="submit" class="Bouton_Theme" >Theme</a>
                 <a href="static/AccesTest" type="submit" class="Bouton_Test" >Test</a>
-                <a href="static/AccesInscription" type="submit" class="Bouton_Inscription" >Inscription</a>       
+                <a href="<%=request.getContextPath()%>/Inscription" type="submit" class="Bouton_Inscription" >Inscription</a>       
                 <br />
                 <br />
             </div>              

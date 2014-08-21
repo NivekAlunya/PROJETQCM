@@ -11,9 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import microsoft.sql.DateTimeOffset;
-
 import fr.eni_ecole.qcm.model.Administrateur;
 import fr.eni_ecole.qcm.model.Candidat;
 import fr.eni_ecole.qcm.model.Inscription;

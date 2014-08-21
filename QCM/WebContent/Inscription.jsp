@@ -14,8 +14,8 @@ ArrayList<Test> tests = (ArrayList<Test>)request.getAttribute("tests");
 <link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
 </head>
 
-<body style="width:100%;">
-    <div id="page" style="margin:0 100px">
+<body>
+    <div id="page">
         <div class="header" >
         <div class="cadre"><h1>Inscription</h1></div>
         </div>
@@ -26,7 +26,7 @@ ArrayList<Test> tests = (ArrayList<Test>)request.getAttribute("tests");
                 </div>
             </div>
         <nav>
-            <a href="default.jsp">Accueil</a> <b> | Inscrire à un test </b>
+            <a class="text_souligne" href="default.jsp">Accueil</a> <b> | Inscrire à un test </b>
         </nav>
         <form action="" method="post" enctype="application/x-www-form-urlencoded">
             <fieldset>
@@ -38,23 +38,27 @@ ArrayList<Test> tests = (ArrayList<Test>)request.getAttribute("tests");
                <% } %>
                </select>
             </fieldset>
-            <fieldset>
-                <label for="dateDebut">Activée le : </label>
-                <input type="datetime" name="dateDebut" id="dateDebut"/> 
-                <label for="dateFin">jusqu'au: </label>
-               <input type="datetime" name="dateFin" id="dateFin" /> 
+            <fieldset>               
+                  <div class="Barre_Date_Debut">
+                       <label for="dateDebut">Activée le : </label>
+                       <input type="datetime" name="dateDebut" id="ChampDateDebut" /> 
+                   </div>
+                   <div class="Barre_Date_Fin">
+                        <label for="dateFin">jusqu'au: </label>
+                        <input  type="datetime" name="dateFin" id="ChampDateFin" /> 
+                    </div>         
             </fieldset>
             <fieldset>
               <ul>
               <% for (Candidat candidat: candidats){ %>
-                  <li><input name="candidats" type="checkbox" value="<%=candidat.getIdCandidat()%>" /><label><%=candidat.getNom().toUpperCase() + " " + candidat.getPrenom()%></label>
+                  <li><input class="text_souligne" name="candidats" type="checkbox" value="<%=candidat.getIdCandidat()%>" /><label><%=candidat.getNom().toUpperCase() + " " + candidat.getPrenom()%></label>
                   <% } %>
               </ul>
             </fieldset>
             <fieldset>
-              <button type="submit" name="validerForm" value="valider">Envoyer</button>
-              <button type="reset" name="annulerForm" value="annuler">Annuler</button>
-              <a href="<%=request.getContextPath()%>/AccueilAdministration.jsp">Retour Acceuil</a>
+              <button class="Bouton_Envoyer" type="submit" name="validerForm" value="valider" >Envoyer</button>
+              <button class="Bouton_Annuler" type="reset" name="annulerForm" value="annuler" >Annuler</button>
+              <div class="Barre_Retour_Accueil"> <a class="text_souligne" href="<%=request.getContextPath()%>/AccueilAdministration.jsp">Retour Accueil</a></div>
             </fieldset>
         </form>
        
