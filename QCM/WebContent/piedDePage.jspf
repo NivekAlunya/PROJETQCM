@@ -1,3 +1,3 @@
 <div class="Pied_Page">
-            <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
+            <div class="cadre"><img  width=100%  src="<%=request.getContextPath()%>/image/pieddepageENI.png" ></div>
         </div>

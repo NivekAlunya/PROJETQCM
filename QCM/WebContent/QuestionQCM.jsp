@@ -74,9 +74,7 @@ Integer count = questionsqcm.size();
             </div>              
         </div> 
    </div>
-   <div class="Pied_Page">
-        <div class="cadre"><img  width=100%  src="<%=request.getContextPath()%>/image/pieddepageENI.png" ></div>
-   </div>  
+        <%@ include file="/piedDePage.jspf" %>
 </div>
 </body>
 </html>

@@ -5,7 +5,6 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <title>QCM ENI</title>
-<base href="http://localhost:8080/QCM/" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
 </head>
 <body>

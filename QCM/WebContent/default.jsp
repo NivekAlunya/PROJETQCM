@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <title>QCM ENI</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
+<link rel="stylesheet" type="text/css" href="/QCM/theme/Theme1.css" />
 </head>
 <body>
     <div id="page">

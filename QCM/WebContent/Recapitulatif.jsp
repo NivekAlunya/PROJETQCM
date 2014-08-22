@@ -40,9 +40,7 @@ Integer nombre = (Integer)request.getAttribute("nombre");
                 <a href="<%=request.getContextPath()%>/Resultat" class="Bouton_Cloturer">Clôturer</a> 
             </div>          
         </div>
-        <div class="Pied_Page">
-                <div class="cadre"><img  width=100%  src="image/pieddepageENI.png" ></div>
-        </div>
+        <%@ include file="/piedDePage.jspf" %>
      </div>
 </body>
 </html>

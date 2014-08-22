@@ -12,7 +12,6 @@ Inscription insc = (Inscription)request.getSession().getAttribute("inscription")
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<base href="http://localhost:8080/QCM/"/>
 <title>QCM ENI - Résultat</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
 </head>
