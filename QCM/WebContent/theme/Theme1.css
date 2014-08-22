@@ -705,6 +705,8 @@ form.connexion, .bloc_identifiant,.bloc_motdepasse
 {
 	visibility: visible;
 	position: absolute;
+	left:60px;
+	top:140px;
 }
 
 

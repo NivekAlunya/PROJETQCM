@@ -11,7 +11,7 @@ ArrayList<Test> tests = (ArrayList<Test>)request.getAttribute("tests");
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <title>QCM ENI - Inscription</title>
-<link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
 </head>
 
 <body>

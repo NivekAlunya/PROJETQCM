@@ -12,8 +12,7 @@ Integer count = questionsqcm.size();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
  <title>Passage d'un Test</title>
-    <base href="http://localhost:8080/QCM/"/>
-    <link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css?jhjkhjkhjk" />
 </head>
 <body>
   <div id="page">

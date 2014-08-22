@@ -12,7 +12,7 @@
 <head>
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"/>
   <title>Liste des tests</title>
-  <link media="all" rel="stylesheet" href="<%=request.getContextPath()%>/theme/Theme1.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css?jhjkhjkhjk" />
 </head>
 <body>
 <div id="page">

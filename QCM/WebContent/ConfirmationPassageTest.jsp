@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Confirmation Passage Test</title>
-<link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
 </head>
 <body>
 <div>

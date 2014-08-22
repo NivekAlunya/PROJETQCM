@@ -3,9 +3,8 @@
 <html>
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-<base href="http://localhost:8080/QCM/"/>
 <title>QCM ENI</title>
-<link rel="stylesheet" type="text/css" href="theme/Theme1.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/theme/Theme1.css" />
 </head>
 <body>
     <div id="page">
